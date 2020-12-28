@@ -28,6 +28,11 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "standard-version": {
+    "scripts": {
+      "posttag": "npm run build-zip"
+    }
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.14.1",
