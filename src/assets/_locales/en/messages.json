@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "Free Export Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "Freely export the required bookmarks as HTML file"
+  },
+  "extensionTip": {
+    "message": "Open the export bookmarks page"
+  },
+  "indexTitle": {
+    "message": "Export bookmarks"
+  },
+  "indexExportText": {
+    "message": "Export"
+  },
+  "indexExportLoadingText": {
+    "message": "Exporting"
+  },
+  "indexExportTip": {
+    "message": "Export selected bookmarks as HTML file"
+  },
+  "indexReloadText": {
+    "message": "Reload"
+  },
+  "indexReloadTip": {
+    "message": "Reload bookmark list"
+  },
+  "indexInputPlaceholder": {
+    "message": "Enter keywords to filter"
+  },
+  "indexExportNoSelectedTip": {
+    "message": "Please select the bookmarks to be exported"
+  },
+  "indexExportSuccessTip": {
+    "message": "Bookmark export completed"
+  },
+  "indexLoadingText": {
+    "message": "Desperately loading"
+  },
+  "indexDrawerTitle": {
+    "message": "More options"
+  },
+  "indexDrawerDisplayTitle": {
+    "message": "Display content"
+  },
+  "indexDrawerDisplayShowIconText": {
+    "message": "Show bookmark icon"
+  },
+  "indexDrawerDisplayAutoExpandAllText": {
+    "message": "Automatically expand all folders when bookmarks are first loaded"
+  },
+  "indexDrawerDisplayAutoExpandAllTip": {
+    "message": "Note: When this option is enabled, if there are too many bookmarks, performance will be affected."
+  },
+  "indexDrawerExportTitle": {
+    "message": "Export content"
+  },
+  "indexDrawerExportIncludeIconText": {
+    "message": "Include website icon data in the exported file"
+  },
+  "indexDrawerExportIncludeIconTip": {
+    "message": "Note: This will significantly increase the time required to export the file and the file size."
+  },
+  "indexDrawerExportIncludeDateText": {
+    "message": "Include creation date and modification date data in the exported file"
+  },
+  "indexDrawerExportNoOtherBookmarksText": {
+    "message": "The root directory of \"Other bookmarks\" is not displayed in the exported file"
+  },
+  "indexDrawerExportNoOtherBookmarksTip": {
+    "message": "This is the browser's native way of exporting bookmarks, meaning that the content under \"Other bookmarks\" in the exported result is at the same level as the \"Bookmarks bar\"."
+  },
+  "indexDrawerExportNoParentFoldersText": {
+    "message": "The parent folder is not displayed in the exported file"
+  },
+  "indexDrawerExportNoParentFoldersTip": {
+    "message": "In the export result, all bookmarks are directly located under the root directories such as \"Bookmarks bar\" and \"Other bookmarks\"."
+  },
+  "indexDrawerAboutTitle": {
+    "message": "More information"
+  },
+  "indexDrawerAboutSupportText": {
+    "message": "Support"
+  },
+  "indexDrawerAboutSupportLabel": {
+    "message": "Free export bookmarks is a free and open source bookmarks export tool, which helps users to export part of their bookmarks for saving or sharing, and never collect any private information from users."
+  },
+  "indexDrawerAboutSourceCodeText": {
+    "message": "Source code (MIT Liscense)"
+  },
+  "indexDrawerAboutFeedbackText": {
+    "message": "Feedback"
+  },
+  "indexDrawerAboutThanksText": {
+    "message": "Thanks"
+  },
+  "indexDrawerAboutThanksLabel": {
+    "message": "The birth of Free Export Bookmarks is inseparable from the support and help provided by the following open source projects:"
+  }
+}

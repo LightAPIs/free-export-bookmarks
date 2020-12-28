@@ -1,0 +1,101 @@
+{
+  "extensionName": {
+    "message": "Free Export Bookmarks"
+  },
+  "extensionDescription": {
+    "message": "自由导出所需要的书签为 HTML 文件"
+  },
+  "extensionTip": {
+    "message": "点击打开导出书签页面"
+  },
+  "indexTitle": {
+    "message": "导出书签"
+  },
+  "indexExportText": {
+    "message": "导出"
+  },
+  "indexExportLoadingText": {
+    "message": "导出中"
+  },
+  "indexExportTip": {
+    "message": "导出已选择的书签为 HTML 文件"
+  },
+  "indexReloadText": {
+    "message": "重新加载"
+  },
+  "indexReloadTip": {
+    "message": "重新加载书签列表"
+  },
+  "indexInputPlaceholder": {
+    "message": "输入关键字进行过滤"
+  },
+  "indexExportNoSelectedTip": {
+    "message": "请选择需要导出的书签"
+  },
+  "indexExportSuccessTip": {
+    "message": "已完成书签导出"
+  },
+  "indexLoadingText": {
+    "message": "拼命加载中"
+  },
+  "indexDrawerTitle": {
+    "message": "更多选项"
+  },
+  "indexDrawerDisplayTitle": {
+    "message": "展示内容"
+  },
+  "indexDrawerDisplayShowIconText": {
+    "message": "显示书签的图标"
+  },
+  "indexDrawerDisplayAutoExpandAllText": {
+    "message": "在首次加载书签时自动展开所有文件夹"
+  },
+  "indexDrawerDisplayAutoExpandAllTip": {
+    "message": "注意：在启用该选项时，若书签数量过多，性能将会受到影响。"
+  },
+  "indexDrawerExportTitle": {
+    "message": "导出内容"
+  },
+  "indexDrawerExportIncludeIconText": {
+    "message": "在导出的文件中包含网站图标数据"
+  },
+  "indexDrawerExportIncludeIconTip": {
+    "message": "注意：这将显著增加导出文件所需时间和文件大小。"
+  },
+  "indexDrawerExportIncludeDateText": {
+    "message": "在导出的文件中包含创建日期和修改日期数据"
+  },
+  "indexDrawerExportNoOtherBookmarksText": {
+    "message": "在导出的文件中不显示\"其他书签\"根目录"
+  },
+  "indexDrawerExportNoOtherBookmarksTip": {
+    "message": "这是浏览器原生导出书签功能的处理方式，即在导出结果中\"其他书签\"下的内容与\"书签栏\"为同一层级。"
+  },
+  "indexDrawerExportNoParentFoldersText": {
+    "message": "在导出的文件中不显示父级文件夹"
+  },
+  "indexDrawerExportNoParentFoldersTip": {
+    "message": "即在导出结果中所有书签都直接位于\"书签栏\"和\"其他书签\"等根目录下。"
+  },
+  "indexDrawerAboutTitle": {
+    "message": "更多信息"
+  },
+  "indexDrawerAboutSupportText": {
+    "message": "支持"
+  },
+  "indexDrawerAboutSupportLabel": {
+    "message": "Free Export Bookmarks 是一款免费开源的书签导出工具，皆在帮助用户更方便导出所需的部分书签以供保存或分享，并且绝不会收集发送用户的任何隐私信息。"
+  },
+  "indexDrawerAboutSourceCodeText": {
+    "message": "源代码 (MIT Liscense)"
+  },
+  "indexDrawerAboutFeedbackText": {
+    "message": "问题反馈"
+  },
+  "indexDrawerAboutThanksText": {
+    "message": "鸣谢"
+  },
+  "indexDrawerAboutThanksLabel": {
+    "message": "Free Export Bookmarks 的诞生，离不开以下开源项目所提供的支持和帮助："
+  }
+}
