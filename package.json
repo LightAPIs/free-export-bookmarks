@@ -13,7 +13,6 @@
     "build-zip": "vue-cli-service build --mode zipfile",
     "fix": "eslint --fix 'src/**/*.{js,vue,scss}'",
     "format": "prettier --write 'src/**/*.{js,vue,scss}'",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "release": "standard-version"
   },
   "lint-staged": {
