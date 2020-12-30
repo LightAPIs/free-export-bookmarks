@@ -1,12 +1,14 @@
 # Free Export Bookmarks
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![MIT](https://img.shields.io/badge/License-MIT-green)](/LICENSE)
+
 > 自由书签导出工具
 
 允许用户自定义选择导出所需要的书签为 HTML 文件，并且可以自行决定导出内容的数据结构，同时在选择书签时支持通过关键字进行结果过滤。
 
 ## 安装方法
 
-1. ~~前往 [chrome 网上应用店](#) 进行下载安装~~ (等待商店审核通过中...)。
+1. ~~前往 [chrome 网上应用店](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) 进行下载安装~~ (等待商店审核通过中...)。
 2. 点击[此处](https://github.com/LightAPIs/free-export-bookmarks/releases/latest)下载扩展程序压缩包并进行解压，启动浏览器在地址栏内输入 `chrome://extensions/` 进入扩展程序管理页面，点击网页右上角的开关以开启"开发者模式"，然后点击"加载已解压的扩展程序"按钮，选择加载先前解压所得目录即可完成扩展程序的安装。
 
 ## 开发编译
