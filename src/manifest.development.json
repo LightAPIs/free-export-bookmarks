@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__ (Dev)",
   "description": "__MSG_extensionDescription__",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "pana",
   "homepage_url": "https://github.com/LightAPIs/free-export-bookmarks",
   "default_locale": "en",
@@ -33,7 +33,11 @@
     },
     "default_title": "__MSG_extensionName__ (Dev)\n__MSG_extensionTip__"
   },
-  "permissions": ["bookmarks", "storage", "chrome://favicon/*"],
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "chrome://favicon/*"
+  ],
   "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data: chrome:; connect-src * blob:; object-src 'none';",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0upo8Ezr2Eqq/E82nd93iHGwt/Dqh6Pr51EncxgJiWXeESiKltG/SChAQL9l2+ymp9eDAJgIXYsq23vGk6jPWa1+hKNdDX212OH02FSAJhNvlUFJu/2zVdXchi3XnPRq7IsEZnR1gO9BPDa58Vl18KBKT+MPN+KDRNTUXVDqx4MyB0zaDXOsqFrhYYAGUxc2LkhgSedyT6UYh3efdEe/Ebtaia1GO/bgVHj5pcUotHSiZvfLEnXPoyoXTbzaoe7hTAjAuZ+ixng6oVdNRRBfOgQb2IiqDnxkLzJKHQL190UUgLY0mzAdWmu0GanyyAST/8DYuVZWPQzJ8vDSiMTnJwIDAQAB"
 }
