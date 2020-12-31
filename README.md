@@ -8,7 +8,7 @@
 
 ## 安装方法
 
-1. ~~前往 [chrome 网上应用店](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) 进行下载安装~~ (等待商店审核通过中...)。
+1. 前往 [chrome 网上应用店](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) 进行下载安装。
 2. 点击[此处](https://github.com/LightAPIs/free-export-bookmarks/releases/latest)下载扩展程序压缩包并进行解压，启动浏览器在地址栏内输入 `chrome://extensions/` 进入扩展程序管理页面，点击网页右上角的开关以开启"开发者模式"，然后点击"加载已解压的扩展程序"按钮，选择加载先前解压所得目录即可完成扩展程序的安装。
 
 ## 开发编译
