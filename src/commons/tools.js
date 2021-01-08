@@ -8,14 +8,6 @@ const tools = {
    * 防抖延时器值
    */
   debounceTimer: null,
-  /**
-   * 节流延时器值
-   */
-  throttleTimer: null,
-  /**
-   * 节流时间戳值
-   */
-  throttlePrevious: 0,
 
   /**
    * 防抖方法
@@ -58,83 +50,6 @@ const tools = {
   },
 
   /**
-   * 节流方法
-   * - 参考：https://github.com/mqyqingfeng/Blog/issues/26
-   * @param {Function} func 函数方法
-   * @param {Number} delay 延迟时间
-   * @param {Object} [options] 参数对象 - leading: false 表示禁用第一次执行; trailing: false 表示禁用停止触发的回调 (两者不能同时设置为 false)
-   */
-  throttle(func, delay, options = {}) {
-    let that, result;
-
-    const throttled = function(...args) {
-      const now = Date.now();
-
-      if (!tools.throttlePrevious && options.leading === false) {
-        // 禁用第一次执行
-        tools.throttlePrevious = now;
-      }
-
-      /** 下次触发 func 剩余的时间 */
-      const remaining = delay - (now - tools.throttlePrevious);
-      that = this;
-      // 如果没有剩余的时间了或者改了系统时间
-      if (remaining <= 0 || remaining > delay) {
-        if (tools.throttleTimer) {
-          clearTimeout(tools.throttleTimer);
-          tools.throttleTimer = null;
-        }
-        tools.throttlePrevious = now;
-        result = func.apply(that, args);
-        if (!tools.throttleTimer) {
-          // 垃圾回收，方便下次执行定时器
-          that = args = null;
-        }
-      } else if (!tools.throttleTimer && options.trailing !== false) {
-        tools.throttleTimer = setTimeout(() => {
-          tools.throttlePrevious = options.leading === false ? 0 : Date.now();
-          tools.throttleTimer = null;
-          result = func.apply(that, args);
-          if (!tools.throttleTimer) {
-            that = args = null;
-          }
-        }, remaining);
-      }
-
-      return result;
-    };
-
-    throttled.cancel = function() {
-      clearTimeout(tools.throttleTimer);
-      tools.throttlePrevious = 0;
-      tools.throttleTimer = null;
-    };
-
-    return throttled();
-  },
-
-  /**
-   * 获取输入焦点(聚焦)方法
-   * @param {*} el 节点
-   * @param {*} binding 指令对象
-   */
-  focus(el, binding) {
-    if (binding.value && binding.oldValue !== binding.value) {
-      tools.debounce(() => {
-        try {
-          if (binding.value) {
-            el.focus();
-            el.select();
-          }
-        } catch (e) {
-          console.error('Error in focus command.');
-          console.error(e);
-        }
-      }, 200);
-    }
-  },
-
-  /**
    * 下载文本文件至本地的方法
    * @param {String} content 文件内容
    * @param {String} filename 文件名 - 支持带扩展名(默认为 txt)
@@ -172,45 +87,6 @@ const tools = {
     saveLink = null;
 
     typeof completed === 'function' && completed();
-  },
-
-  /**
-   * 打开并读取文本文件的方法
-   * @param {Function} callback 回调函数 (res: 状态, content: 内容)
-   */
-  openTextFile: callback => {
-    const fileInput = document.createElementNS('http://www.w3.org/1999/xhtml', 'input');
-    fileInput.type = 'file';
-    fileInput.accept = '.txt, .text, .json, .conf, .config';
-    fileInput.style.display = 'none';
-
-    fileInput.addEventListener('change', () => {
-      if (!fileInput.value) {
-        console.warn('No file selected.');
-        callback(false, 'no file');
-        return;
-      }
-
-      const file = fileInput.files[0];
-      const { type } = file;
-
-      if (type !== 'application/json' && type !== 'application/xml' && type !== 'text/plain') {
-        console.warn('Not a valid file.');
-        callback(false, 'valid');
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const data = e.target.result;
-        callback(true, data);
-        return;
-      };
-
-      reader.readAsText(file);
-    });
-
-    fileInput.click();
   },
 };
 

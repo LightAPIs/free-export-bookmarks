@@ -33,7 +33,6 @@ npm install
 
 * `npm run build` - 构建项目
 * `npm run build-watch` - 构建项目(支持热重载)
-* `npm run format` - 格式化源代码
 
 ### 相关目录及文件
 
