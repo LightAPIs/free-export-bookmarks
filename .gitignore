@@ -23,10 +23,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# vscode env
-# folder
-.vscode
-
 # file
 jsconfig.json
 tsconfig.json
