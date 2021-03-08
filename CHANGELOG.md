@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.0.2...v1.1.0) (2021-03-08)
+
+
+### Features
+
+* **export:** 支持在导出过程中显示进度 ([70c33c1](https://github.com/LightAPIs/free-export-bookmarks/commit/70c33c18db2e7dd416e9dbd6ef18aaf42d0c4d27))
+
 ### [1.0.2](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.0.1...v1.0.2) (2020-12-30)
 
 
