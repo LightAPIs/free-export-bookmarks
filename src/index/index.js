@@ -14,6 +14,7 @@ import {
   Loading,
   Main,
   Message,
+  Progress,
   Switch,
   Tooltip,
   Tree,
@@ -31,6 +32,7 @@ Vue.use(Switch);
 Vue.use(Divider);
 Vue.use(Tooltip);
 Vue.use(Input);
+Vue.use(Progress);
 Vue.prototype.$loading = Loading.service;
 Vue.prototype.$ui = ui;
 Vue.prototype.$tools = tools;

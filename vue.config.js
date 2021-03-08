@@ -4,6 +4,7 @@ const path = require('path');
 const packageInfo = require('./package.json');
 
 const productionMode = process.env.NODE_ENV === 'production';
+const outputDir = productionMode ? 'build' : 'dist';
 // Generate pages object
 const pages = {};
 
@@ -22,7 +23,7 @@ const copyFiles = productionMode
   ? [
       {
         from: path.resolve('src/manifest.production.json'),
-        to: `${path.resolve('dist')}/manifest.json`,
+        to: `${path.resolve('build')}/manifest.json`,
       },
     ]
   : [
@@ -34,7 +35,7 @@ const copyFiles = productionMode
 
 copyFiles.push({
   from: path.resolve('src/assets'),
-  to: path.resolve('dist'),
+  to: path.resolve(outputDir),
 });
 
 process.env.VUE_APP_VERSION = productionMode ? packageInfo.version : packageInfo.version + ' (Dev)';

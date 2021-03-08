@@ -2,7 +2,7 @@
   "name": "free-export-bookmarks",
   "description": "A chrome-extension project",
   "version": "1.0.2",
-  "author": "pana",
+  "author": "pana <new4wang@outlook.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -18,8 +18,7 @@
   "lint-staged": {
     "src/**/*.{js,vue,scss}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "husky": {

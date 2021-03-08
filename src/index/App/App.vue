@@ -26,6 +26,9 @@
           @click="drawer = true"
         ></el-button>
       </el-header>
+      <div class="export-progress" v-show="progress.isShow">
+        <el-progress :percentage="progress.value"></el-progress>
+      </div>
       <el-main id="index-main">
         <el-tree
           :data="dataSource"
@@ -228,56 +231,6 @@ async function getIcon(url) {
   return icon;
 }
 
-async function createHtmlFile(arr, settings = {}) {
-  const header = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
-<!-- This is an automatically generated file.
-     It will be read and overwritten.
-     DO NOT EDIT! -->
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>Bookmarks</TITLE>
-<H1>Bookmarks</H1>
-`;
-  const body = `<DL><p>${await traverse(arr, settings)}
-</DL><p>
-`;
-  return header + body;
-}
-
-async function traverse(arr, settings = {}, tabSpace = '', isNoOther = false) {
-  let html = '';
-  const space = tabSpace + '    ';
-  for (let i = 0; i < arr.length; i++) {
-    const item = arr[i];
-    if (item.children) {
-      if (settings.noParentFolders && item.id != '1' && item.id != '2') {
-        html += `${await traverse(item.children, settings, '', isNoOther)}`;
-      } else if (settings.noOtherBookmarks && item.id == '2') {
-        html += `${await traverse(item.children, settings, '', true)}`;
-      } else {
-        html += `
-${space}<DT><H3${
-          settings.includeDate
-            ? ' ADD_DATE="' +
-              (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') +
-              '"' +
-              ' LAST_MODIFIED="' +
-              (item.dateGroupModified ? item.dateGroupModified.toString().slice(0, 10) : '0') +
-              '"'
-            : ''
-        }${item.id == '1' ? ' PERSONAL_TOOLBAR_FOLDER="true"' : ''}>${htmlEncode(item.title)}</H3>
-${space}<DL><p>${await traverse(item.children, settings, space, isNoOther)}
-${space}</DL><p>`;
-      }
-    } else {
-      html += `
-${settings.noParentFolders ? (isNoOther ? '    ' : '        ') : space}<DT><A HREF="${item.url}"${
-        settings.includeDate ? ' ADD_DATE="' + (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') + '"' : ''
-      }${settings.includeIcon ? ' ICON="' + (await getIcon(item.url)) + '"' : ''}>${htmlEncode(item.title)}</A>`;
-    }
-  }
-  return html;
-}
-
 export default {
   name: 'App',
   data() {
@@ -324,13 +277,18 @@ export default {
           url: 'https://github.com/vuejs/vue',
         },
       ],
+      progress: {
+        isShow: false,
+        value: 0,
+        count: 0,
+        totalCount: 0,
+      },
     };
   },
   watch: {
     filterText(val) {
       this.searching = true;
       this.$tools.debounce(() => {
-        console.log(val);
         this.$nextTick(() => {
           this.$refs.tree.filter(val);
           this.searching = false;
@@ -348,15 +306,21 @@ export default {
         chrome.bookmarks.getTree(async results => {
           if (results) {
             const data = [...results[0].children];
+            Object.assign(this.progress, {
+              isShow: true,
+              value: 0,
+              count: 0,
+              totalCount: this.checkedKeys.length,
+            });
             const exportArr = this.traverseBookmarks(data);
-            const { settings } = this;
             const time = new Date();
 
             this.$tools.downloadTextFile(
-              await createHtmlFile(exportArr, settings),
+              await this.createHtmlFile(exportArr),
               `bookmarks_${time.getFullYear().toString()}_${(time.getMonth() + 1).toString()}_${time.getDate().toString()}.html`,
               () => {
                 this.exportLoading = false;
+                this.progress.isShow = false;
                 this.$message({
                   message: this.$ui.get('indexExportSuccessTip'),
                   type: 'success',
@@ -435,6 +399,8 @@ export default {
               return item;
             }
             return null;
+          } else {
+            return null;
           }
         })
         .filter(v => v);
@@ -451,6 +417,61 @@ export default {
           this.loadingInstance.close();
         }
       });
+    },
+    async createHtmlFile(arr) {
+      const { settings } = this;
+      const header = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
+<!-- This is an automatically generated file.
+     It will be read and overwritten.
+     DO NOT EDIT! -->
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>Bookmarks</TITLE>
+<H1>Bookmarks</H1>
+`;
+      const body = `<DL><p>${await this.traverse(arr, settings)}
+</DL><p>
+`;
+      this.progress.value = 100;
+      return header + body;
+    },
+    async traverse(arr, settings = {}, tabSpace = '', isNoOther = false) {
+      let html = '';
+      const space = tabSpace + '    ';
+      for (let i = 0; i < arr.length; i++) {
+        const item = arr[i];
+        if (item.children) {
+          if (settings.noParentFolders && item.id != '1' && item.id != '2') {
+            html += `${await this.traverse(item.children, settings, '', isNoOther)}`;
+          } else if (settings.noOtherBookmarks && item.id == '2') {
+            html += `${await this.traverse(item.children, settings, '', true)}`;
+          } else {
+            html += `
+${space}<DT><H3${
+              settings.includeDate
+                ? ' ADD_DATE="' +
+                  (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') +
+                  '"' +
+                  ' LAST_MODIFIED="' +
+                  (item.dateGroupModified ? item.dateGroupModified.toString().slice(0, 10) : '0') +
+                  '"'
+                : ''
+            }${item.id == '1' ? ' PERSONAL_TOOLBAR_FOLDER="true"' : ''}>${htmlEncode(item.title)}</H3>
+${space}<DL><p>${await this.traverse(item.children, settings, space, isNoOther)}
+${space}</DL><p>`;
+          }
+        } else {
+          html += `
+${settings.noParentFolders ? (isNoOther ? '    ' : '        ') : space}<DT><A HREF="${item.url}"${
+            settings.includeDate ? ' ADD_DATE="' + (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') + '"' : ''
+          }${settings.includeIcon ? ' ICON="' + (await getIcon(item.url)) + '"' : ''}>${htmlEncode(item.title)}</A>`;
+
+          this.progress.count++;
+          if (this.progress.count / this.progress.totalCount > (this.progress.value + 10) / 100) {
+            this.progress.value += 10;
+          }
+        }
+      }
+      return html;
     },
   },
   mounted() {
