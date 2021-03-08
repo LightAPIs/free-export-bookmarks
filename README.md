@@ -1,6 +1,6 @@
 # Free Export Bookmarks
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![MIT](https://img.shields.io/badge/License-MIT-green)](/LICENSE)
+[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
 
 > 自由书签导出工具
 
@@ -15,7 +15,7 @@
 
 ### 环境需求
 
-- 安装 [Node.js](https://nodejs.org/) 8.9 及以上 (*新版本已集成 npm，若您的网络环境不佳，推荐安装使用 [cnpm](https://github.com/cnpm/cnpm)*)
+- 安装 [Node.js](https://nodejs.org/) 8.9 及以上 (_新版本已集成 npm，若您的网络环境不佳，推荐安装使用 [cnpm](https://github.com/cnpm/cnpm)_)
 
 ### 初始化指令
 
@@ -31,8 +31,8 @@ npm install
 
 ### 已配置指令
 
-* `npm run build` - 构建项目
-* `npm run build-watch` - 构建项目(支持热重载)
+- `npm run build` - 构建项目
+- `npm run build-watch` - 构建项目(支持热重载)
 
 ### 相关目录及文件
 
@@ -51,4 +51,3 @@ npm install
 ## 许可证
 
 [MIT](/LICENSE) License
-
