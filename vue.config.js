@@ -41,6 +41,7 @@ copyFiles.push({
 process.env.VUE_APP_VERSION = productionMode ? packageInfo.version : packageInfo.version + ' (Dev)';
 
 module.exports = {
+  outputDir,
   filenameHashing: false,
   lintOnSave: 'warning',
   pages,
@@ -65,7 +66,7 @@ module.exports = {
       config.plugins.push(
         new ZipWebpackPlugin({
           path: path.resolve('archive'),
-          filename: `${packageInfo.name}_${packageInfo.version}.zip`,
+          filename: `${packageInfo.name}_v${packageInfo.version}.zip`,
         })
       );
     }

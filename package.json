@@ -60,7 +60,7 @@
     "standard-version": "^9.0.0",
     "vue-cli-plugin-chrome-ext": "~0.0.5",
     "vue-template-compiler": "^2.6.11",
-    "zip-webpack-plugin": "^3.0.0"
+    "zip-webpack-plugin": "^4.0.1"
   },
   "config": {
     "commitizen": {
