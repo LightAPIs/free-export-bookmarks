@@ -68,14 +68,23 @@
   "indexDrawerExportNoOtherBookmarksText": {
     "message": "在匯出的檔案中不顯示\"其他書籤\"根目錄"
   },
+  "indexDrawerExportNoOtherBookmarksTextFirefox": {
+    "message": "在匯出的檔案中不顯示\"其他書籤\"等根目錄"
+  },
   "indexDrawerExportNoOtherBookmarksTip": {
     "message": "這是瀏覽器原生匯出書籤功能的處理方式，即在匯出結果中\"其他書籤\"下的內容與\"書籤列\"為同一層級。"
+  },
+  "indexDrawerExportNoOtherBookmarksTipFirefox": {
+    "message": "即在匯出結果中\"其他書籤\"等目錄下的內容與\"書籤選單\"為同一層級。"
   },
   "indexDrawerExportNoParentFoldersText": {
     "message": "在匯出的檔案中不顯示父級資料夾"
   },
   "indexDrawerExportNoParentFoldersTip": {
     "message": "即在匯出結果中所有書籤都直接位於\"書籤列\"和\"其他書籤\"等根目錄下。"
+  },
+  "indexDrawerExportNoParentFoldersTipFirefox": {
+    "message": "即在匯出結果中所有書籤都直接位於\"書籤選單\"和\"其他書籤\"等根目錄下。"
   },
   "indexDrawerAboutTitle": {
     "message": "更多資訊"

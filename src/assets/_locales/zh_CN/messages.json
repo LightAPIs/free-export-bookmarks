@@ -68,14 +68,23 @@
   "indexDrawerExportNoOtherBookmarksText": {
     "message": "在导出的文件中不显示\"其他书签\"根目录"
   },
+  "indexDrawerExportNoOtherBookmarksTextFirefox": {
+    "message": "在导出的文件中不显示\"其他书签\"等根目录"
+  },
   "indexDrawerExportNoOtherBookmarksTip": {
     "message": "这是浏览器原生导出书签功能的处理方式，即在导出结果中\"其他书签\"下的内容与\"书签栏\"为同一层级。"
+  },
+  "indexDrawerExportNoOtherBookmarksTipFirefox": {
+    "message": "即在导出结果中\"其他书签\"等目录下的内容与\"书签菜单\"为同一层级。"
   },
   "indexDrawerExportNoParentFoldersText": {
     "message": "在导出的文件中不显示父级文件夹"
   },
   "indexDrawerExportNoParentFoldersTip": {
     "message": "即在导出结果中所有书签都直接位于\"书签栏\"和\"其他书签\"等根目录下。"
+  },
+  "indexDrawerExportNoParentFoldersTipFirefox": {
+    "message": "即在导出结果中所有书签都直接位于\"书签菜单\"和\"其他书签\"等根目录下。"
   },
   "indexDrawerAboutTitle": {
     "message": "更多信息"

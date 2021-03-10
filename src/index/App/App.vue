@@ -69,14 +69,16 @@
             {{ $ui.get('indexDrawerDisplayTitle') }}
           </template>
           <el-divider></el-divider>
-          <div>
-            <el-switch
-              v-model="settings.showIcon"
-              :active-text="$ui.get('indexDrawerDisplayShowIconText')"
-              @change="handleChange"
-            ></el-switch>
-          </div>
-          <el-divider></el-divider>
+          <template v-if="isChrome">
+            <div>
+              <el-switch
+                v-model="settings.showIcon"
+                :active-text="$ui.get('indexDrawerDisplayShowIconText')"
+                @change="handleChange"
+              ></el-switch>
+            </div>
+            <el-divider></el-divider>
+          </template>
           <div>
             <el-switch
               v-model="settings.autoExpandAll"
@@ -95,17 +97,19 @@
             {{ $ui.get('indexDrawerExportTitle') }}
           </template>
           <el-divider></el-divider>
-          <div>
-            <el-switch
-              v-model="settings.includeIcon"
-              :active-text="$ui.get('indexDrawerExportIncludeIconText')"
-              @change="handleChange"
-            ></el-switch>
-          </div>
-          <p>
-            {{ $ui.get('indexDrawerExportIncludeIconTip') }}
-          </p>
-          <el-divider></el-divider>
+          <template v-if="isChrome">
+            <div>
+              <el-switch
+                v-model="settings.includeIcon"
+                :active-text="$ui.get('indexDrawerExportIncludeIconText')"
+                @change="handleChange"
+              ></el-switch>
+            </div>
+            <p>
+              {{ $ui.get('indexDrawerExportIncludeIconTip') }}
+            </p>
+            <el-divider></el-divider>
+          </template>
           <div>
             <el-switch
               v-model="settings.includeDate"
@@ -117,12 +121,14 @@
           <div>
             <el-switch
               v-model="settings.noOtherBookmarks"
-              :active-text="$ui.get('indexDrawerExportNoOtherBookmarksText')"
+              :active-text="
+                isChrome ? $ui.get('indexDrawerExportNoOtherBookmarksText') : $ui.get('indexDrawerExportNoOtherBookmarksTextFirefox')
+              "
               @change="handleChange"
             ></el-switch>
           </div>
           <p>
-            {{ $ui.get('indexDrawerExportNoOtherBookmarksTip') }}
+            {{ isChrome ? $ui.get('indexDrawerExportNoOtherBookmarksTip') : $ui.get('indexDrawerExportNoOtherBookmarksTipFirefox') }}
           </p>
           <el-divider></el-divider>
           <div>
@@ -133,7 +139,7 @@
             ></el-switch>
           </div>
           <p>
-            {{ $ui.get('indexDrawerExportNoParentFoldersTip') }}
+            {{ isChrome ? $ui.get('indexDrawerExportNoParentFoldersTip') : $ui.get('indexDrawerExportNoParentFoldersTipFirefox') }}
           </p>
           <el-divider></el-divider>
         </el-collapse-item>
@@ -283,6 +289,7 @@ export default {
         count: 0,
         totalCount: 0,
       },
+      isChrome: process.env.VUE_APP_TITLE === 'chrome',
     };
   },
   watch: {
@@ -440,9 +447,20 @@ export default {
       for (let i = 0; i < arr.length; i++) {
         const item = arr[i];
         if (item.children) {
-          if (settings.noParentFolders && item.id != '1' && item.id != '2') {
+          if (
+            settings.noParentFolders &&
+            item.id != '1' &&
+            item.id != '2' &&
+            item.id != 'menu________' &&
+            item.id != 'toolbar_____' &&
+            item.id != 'unfiled_____' &&
+            item.id != 'mobile______'
+          ) {
             html += `${await this.traverse(item.children, settings, '', isNoOther)}`;
-          } else if (settings.noOtherBookmarks && item.id == '2') {
+          } else if (
+            settings.noOtherBookmarks &&
+            (item.id == '2' || item.id == 'toolbar_____' || item.id == 'unfiled_____' || item.id == 'mobile______')
+          ) {
             html += `${await this.traverse(item.children, settings, '', true)}`;
           } else {
             html += `

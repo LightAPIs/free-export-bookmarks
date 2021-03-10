@@ -5,11 +5,19 @@
       "type": "json"
     },
     {
-      "filename": "./src/manifest.production.json",
+      "filename": "./src/chrome/manifest.production.json",
       "type": "json"
     },
     {
-      "filename": "./src/manifest.development.json",
+      "filename": "./src/chrome/manifest.development.json",
+      "type": "json"
+    },
+    {
+      "filename": "./src/firefox/manifest.production.json",
+      "type": "json"
+    },
+    {
+      "filename": "./src/firefox/manifest.development.json",
       "type": "json"
     }
   ]

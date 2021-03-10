@@ -68,14 +68,23 @@
   "indexDrawerExportNoOtherBookmarksText": {
     "message": "The root directory of \"Other bookmarks\" is not displayed in the exported file"
   },
+  "indexDrawerExportNoOtherBookmarksTextFirefox": {
+    "message": "The root directory such as \"Other Bookmarks\" will not be displayed in the exported file"
+  },
   "indexDrawerExportNoOtherBookmarksTip": {
     "message": "This is the browser's native way of exporting bookmarks, meaning that the content under \"Other bookmarks\" in the exported result is at the same level as the \"Bookmarks bar\"."
+  },
+  "indexDrawerExportNoOtherBookmarksTipFirefox": {
+    "message": "This is the browser's native way of exporting bookmarks, meaning that the content under \"Other Bookmarks\" in the exported result is at the same level as the \"Bookmarks Menu\"."
   },
   "indexDrawerExportNoParentFoldersText": {
     "message": "The parent folder is not displayed in the exported file"
   },
   "indexDrawerExportNoParentFoldersTip": {
     "message": "In the export result, all bookmarks are directly located under the root directories such as \"Bookmarks bar\" and \"Other bookmarks\"."
+  },
+  "indexDrawerExportNoParentFoldersTipFirefox": {
+    "message": "In the export result, all bookmarks are directly located under the root directories such as \"Bookmarks Menu\" and \"Other Bookmarks\"."
   },
   "indexDrawerAboutTitle": {
     "message": "More information"

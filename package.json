@@ -6,11 +6,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build-chrome-watch": "vue-cli-service build-watch --mode chrome",
+    "build-firefox-watch": "vue-cli-service build-watch --mode firefox",
+    "build-chrome": "vue-cli-service build --mode chromezip",
+    "build-firefox": "vue-cli-service build --mode firefoxzip",
     "lint": "vue-cli-service lint",
-    "build-watch": "vue-cli-service build-watch",
-    "build-zip": "vue-cli-service build --mode zipfile",
     "fix": "eslint --fix 'src/**/*.{js,vue,scss}'",
     "format": "prettier --write 'src/**/*.{js,vue,scss}'",
     "release": "standard-version"
@@ -29,7 +29,7 @@
   },
   "standard-version": {
     "scripts": {
-      "posttag": "npm run build-zip"
+      "posttag": "npm run build-chrome && npm run build-firefox"
     }
   },
   "dependencies": {

@@ -4,7 +4,9 @@ const path = require('path');
 const packageInfo = require('./package.json');
 
 const productionMode = process.env.NODE_ENV === 'production';
-const outputDir = productionMode ? 'build' : 'dist';
+const chromeMode = process.env.VUE_APP_TITLE === 'chrome';
+const zipMode = process.env.VUE_APP_BUILD === 'zip';
+
 // Generate pages object
 const pages = {};
 
@@ -19,19 +21,45 @@ chromeName.forEach(name => {
   };
 });
 
-const copyFiles = productionMode
-  ? [
+let outputDir = '';
+let copyFiles = '';
+if (productionMode) {
+  if (chromeMode) {
+    outputDir = 'build/chrome';
+    copyFiles = [
       {
-        from: path.resolve('src/manifest.production.json'),
-        to: `${path.resolve('build')}/manifest.json`,
-      },
-    ]
-  : [
-      {
-        from: path.resolve('src/manifest.development.json'),
-        to: `${path.resolve('dist')}/manifest.json`,
+        from: path.resolve('src/chrome/manifest.production.json'),
+        to: `${path.resolve('build')}/chrome/manifest.json`,
       },
     ];
+  } else {
+    outputDir = 'build/firefox';
+    copyFiles = [
+      {
+        from: path.resolve('src/firefox/manifest.production.json'),
+        to: `${path.resolve('build')}/firefox/manifest.json`,
+      },
+    ];
+  }
+} else {
+  if (chromeMode) {
+    outputDir = 'dist/chrome';
+    copyFiles = [
+      {
+        from: path.resolve('src/chrome/manifest.development.json'),
+        to: `${path.resolve('dist')}/chrome/manifest.json`,
+      },
+    ];
+  } else {
+    outputDir = 'dist/firefox';
+    copyFiles = [
+      {
+        from: path.resolve('src/firefox/manifest.development.json'),
+        to: `${path.resolve('dist')}/firefox/manifest.json`,
+      },
+    ];
+  }
+}
 
 copyFiles.push({
   from: path.resolve('src/assets'),
@@ -62,13 +90,22 @@ module.exports = {
       });
     }
 
-    if (process.env.VUE_APP_TITLE === 'zip') {
-      config.plugins.push(
-        new ZipWebpackPlugin({
-          path: path.resolve('archive'),
-          filename: `${packageInfo.name}_v${packageInfo.version}.zip`,
-        })
-      );
+    if (zipMode) {
+      if (chromeMode) {
+        config.plugins.push(
+          new ZipWebpackPlugin({
+            path: path.resolve('archive'),
+            filename: `${packageInfo.name}_chrome_v${packageInfo.version}.zip`,
+          })
+        );
+      } else {
+        config.plugins.push(
+          new ZipWebpackPlugin({
+            path: path.resolve('archive'),
+            filename: `${packageInfo.name}_firefox_v${packageInfo.version}.zip`,
+          })
+        );
+      }
     }
 
     // 关闭 webpack 的性能提示
