@@ -8,8 +8,14 @@
 
 ## 安装方法
 
+### Chrome
+
 1. 前往 [chrome 网上应用店](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) 进行下载安装。
 2. 点击[此处](https://github.com/LightAPIs/free-export-bookmarks/releases/latest)下载扩展程序压缩包并进行解压，启动浏览器在地址栏内输入 `chrome://extensions/` 进入扩展程序管理页面，点击网页右上角的开关以开启"开发者模式"，然后点击"加载已解压的扩展程序"按钮，选择加载先前解压所得目录即可完成扩展程序的安装。
+
+### Firefox
+
+_待补充_
 
 ## 开发编译
 
@@ -22,23 +28,21 @@
 ```bash
 # 安装 Vue CLI
 npm install @vue/cli -g
-# 安装 commitzen (可选，安装后可支持使用 `git cz` 替代 `git commit` 命令)
-npm install commitizen -g
 
 # 安装依赖
 npm install
 ```
 
-### 已配置指令
+### 构建指令
 
-- `npm run build` - 构建项目
-- `npm run build-watch` - 构建项目(支持热重载)
+- 构建 chrome 版本: `npm run build-chrome`
+- 构建 firefox 版本: `npm run build-firefox`
 
 ### 相关目录及文件
 
 - 与打包相关的配置位于 `vue.config.js` 文件中
 - 扩展程序源代码位于 `src` 目录中
-- 未改动配置的情况下，`src/assets` 目录下所有文件及文件夹在打包时会自动复制到 `dist` 根目录
+- 未改动配置的情况下，`src/assets` 目录下所有文件及文件夹在打包时会自动复制到项目根目录
 
 ## 致谢
 
