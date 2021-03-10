@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.1.0...v1.2.0) (2021-03-10)
+
+
+### Features
+
+* **build:** 添加打包 Firefox 版本 ([849fd09](https://github.com/LightAPIs/free-export-bookmarks/commit/849fd0919b7361ab68f5dd9657a8b6a2586a350a))
+
 ## [1.1.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.0.2...v1.1.0) (2021-03-08)
 
 
