@@ -15,7 +15,7 @@
 
 ### Firefox
 
-_待补充_
+[Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/)
 
 ## 开发编译
 
