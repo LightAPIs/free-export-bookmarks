@@ -91,21 +91,12 @@ module.exports = {
     }
 
     if (zipMode) {
-      if (chromeMode) {
-        config.plugins.push(
-          new ZipWebpackPlugin({
-            path: path.resolve('archive'),
-            filename: `${packageInfo.name}_chrome_v${packageInfo.version}.zip`,
-          })
-        );
-      } else {
-        config.plugins.push(
-          new ZipWebpackPlugin({
-            path: path.resolve('archive'),
-            filename: `${packageInfo.name}_firefox_v${packageInfo.version}.zip`,
-          })
-        );
-      }
+      config.plugins.push(
+        new ZipWebpackPlugin({
+          path: path.resolve('archive'),
+          filename: `${packageInfo.name}_${chromeMode ? 'chrome' : 'firefox'}_v${packageInfo.version}.zip`,
+        })
+      );
     }
 
     // 关闭 webpack 的性能提示
