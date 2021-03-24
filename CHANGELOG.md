@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.2.0...v1.2.1) (2021-03-24)
+
+
+### Bug Fixes
+
+* **storage:** 修复在 Firefox 上无法保存设置的问题 ([4563065](https://github.com/LightAPIs/free-export-bookmarks/commit/45630652d0dbbfffaa9cf79f509523586e36496b))
+
 ## [1.2.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.1.0...v1.2.0) (2021-03-10)
 
 
