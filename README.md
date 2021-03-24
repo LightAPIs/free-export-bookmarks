@@ -15,8 +15,8 @@
 
 ### Firefox
 
-1. [Releases](https://github.com/LightAPIs/free-export-bookmarks/releases/latest)
-2. [Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/)
+1. [Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/)
+2. [Releases](https://github.com/LightAPIs/free-export-bookmarks/releases/latest)
 
 ## 开发编译
 

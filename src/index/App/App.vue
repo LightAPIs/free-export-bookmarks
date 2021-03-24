@@ -368,10 +368,10 @@ export default {
       return data.title.indexOf(value) !== -1;
     },
     handleChange() {
-      const { settings } = this;
+      const { settings, isChrome } = this;
       chrome.storage.local.set(
         {
-          settings,
+          settings: isChrome ? settings : Object.assign({}, settings),
         },
         () => {
           console.log('The settings have been set.');
