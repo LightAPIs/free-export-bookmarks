@@ -208,7 +208,7 @@ export default {
         noOtherBookmarks: false,
         noParentFolders: false,
       },
-      expandedKeys: ['1', '2'],
+      expandedKeys: ['1', '2', 'menu________', 'toolbar_____', 'unfiled_____', 'mobile______'],
       checkedKeys: [],
       filterText: '',
       searching: false,
@@ -311,7 +311,7 @@ export default {
       Object.assign(this, {
         dataSource: [],
         loadingInstance: null,
-        expandedKeys: ['1', '2'],
+        expandedKeys: ['1', '2', 'menu________', 'toolbar_____', 'unfiled_____', 'mobile______'],
         checkedKeys: [],
         filterText: '',
       });
