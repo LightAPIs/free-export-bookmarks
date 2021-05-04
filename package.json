@@ -1,7 +1,7 @@
 {
   "name": "free-export-bookmarks",
   "description": "A chrome-extension project",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "author": "pana <new4wang@outlook.com>",
   "license": "MIT",
   "private": true,

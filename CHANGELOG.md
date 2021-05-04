@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.2.1...v1.3.0) (2021-05-04)
+
+
+### Features
+
+* **contextmenu:** 在 Firefox 书签工具栏的右键菜单上添加导出书签的选项 ([6a0cbaf](https://github.com/LightAPIs/free-export-bookmarks/commit/6a0cbaf80ef61aa80500a6bbb2c23f117ca98286))
+
+
+### Bug Fixes
+
+* **tree:** 修复在 Firefox 中默认不会自动展开主要目录的问题 ([de37d2e](https://github.com/LightAPIs/free-export-bookmarks/commit/de37d2e395716002de147451b37aeefc879e2fcb))
+
 ### [1.2.1](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.2.0...v1.2.1) (2021-03-24)
 
 
