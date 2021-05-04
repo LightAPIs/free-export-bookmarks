@@ -106,5 +106,8 @@
   },
   "indexDrawerAboutThanksLabel": {
     "message": "Free Export Bookmarks 的誕生，離不開以下開源項目所提供的支持和幫助："
+  },
+  "contextMenuExport": {
+    "message": "匯出當前書籤"
   }
 }

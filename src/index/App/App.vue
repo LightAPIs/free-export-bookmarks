@@ -191,52 +191,6 @@
 </template>
 
 <script>
-/**
- * 转义 html 字符函数
- * - 参考：https://www.cnblogs.com/daysme/p/7100553.html
- * @param {String} text 文本
- */
-function htmlEncode(text) {
-  let temp = document.createElement('div');
-  temp.textContent = text;
-  const output = temp.innerHTML;
-  temp = null;
-  return output;
-}
-
-/**
- * 获取图片 Base64 编码函数
- * - 参考：https://blog.csdn.net/DeMonliuhui/article/details/79731359
- * @param {String} src 图片地址
- * @param {String} ext 图片类型
- */
-function getImageBase64(src, ext) {
-  let canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  let img = new Image();
-  img.crossOrigin = 'Anonymous';
-  img.src = src;
-  return new Promise(resolve => {
-    img.onload = () => {
-      canvas.width = 16;
-      canvas.height = 16;
-      ctx.drawImage(img, 0, 0, 16, 16);
-      let dataURL = canvas.toDataURL('image/' + ext);
-      resolve(dataURL);
-      canvas = null;
-    };
-  });
-}
-
-/**
- * 获取网址图标值函数
- * @param {String} url 网址
- */
-async function getIcon(url) {
-  let icon = await getImageBase64('chrome://favicon/' + url, 'png');
-  return icon;
-}
-
 export default {
   name: 'App',
   data() {
@@ -304,6 +258,15 @@ export default {
     },
   },
   methods: {
+    progressHandle() {
+      this.progress.count++;
+      if (this.progress.count / this.progress.totalCount > (this.progress.value + 10) / 100) {
+        this.progress.value += 10;
+      }
+    },
+    progressCompleted() {
+      this.progress.value = 100;
+    },
     exportHtml() {
       this.checkedKeys = this.$refs.tree.getCheckedKeys();
       // console.log(this.checkedKeys);
@@ -321,9 +284,10 @@ export default {
             });
             const exportArr = this.traverseBookmarks(data);
             const time = new Date();
+            const { settings } = this;
 
             this.$tools.downloadTextFile(
-              await this.createHtmlFile(exportArr),
+              await this.$tools.createHtmlFile(exportArr, settings),
               `bookmarks_${time.getFullYear().toString()}_${(time.getMonth() + 1).toString()}_${time.getDate().toString()}.html`,
               () => {
                 this.exportLoading = false;
@@ -424,72 +388,6 @@ export default {
           this.loadingInstance.close();
         }
       });
-    },
-    async createHtmlFile(arr) {
-      const { settings } = this;
-      const header = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
-<!-- This is an automatically generated file.
-     It will be read and overwritten.
-     DO NOT EDIT! -->
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>Bookmarks</TITLE>
-<H1>Bookmarks</H1>
-`;
-      const body = `<DL><p>${await this.traverse(arr, settings)}
-</DL><p>
-`;
-      this.progress.value = 100;
-      return header + body;
-    },
-    async traverse(arr, settings = {}, tabSpace = '', isNoOther = false) {
-      let html = '';
-      const space = tabSpace + '    ';
-      for (let i = 0; i < arr.length; i++) {
-        const item = arr[i];
-        if (item.children) {
-          if (
-            settings.noParentFolders &&
-            item.id != '1' &&
-            item.id != '2' &&
-            item.id != 'menu________' &&
-            item.id != 'toolbar_____' &&
-            item.id != 'unfiled_____' &&
-            item.id != 'mobile______'
-          ) {
-            html += `${await this.traverse(item.children, settings, '', isNoOther)}`;
-          } else if (
-            settings.noOtherBookmarks &&
-            (item.id == '2' || item.id == 'toolbar_____' || item.id == 'unfiled_____' || item.id == 'mobile______')
-          ) {
-            html += `${await this.traverse(item.children, settings, '', true)}`;
-          } else {
-            html += `
-${space}<DT><H3${
-              settings.includeDate
-                ? ' ADD_DATE="' +
-                  (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') +
-                  '"' +
-                  ' LAST_MODIFIED="' +
-                  (item.dateGroupModified ? item.dateGroupModified.toString().slice(0, 10) : '0') +
-                  '"'
-                : ''
-            }${item.id == '1' ? ' PERSONAL_TOOLBAR_FOLDER="true"' : ''}>${htmlEncode(item.title)}</H3>
-${space}<DL><p>${await this.traverse(item.children, settings, space, isNoOther)}
-${space}</DL><p>`;
-          }
-        } else {
-          html += `
-${settings.noParentFolders ? (isNoOther ? '    ' : '        ') : space}<DT><A HREF="${item.url}"${
-            settings.includeDate ? ' ADD_DATE="' + (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') + '"' : ''
-          }${settings.includeIcon ? ' ICON="' + (await getIcon(item.url)) + '"' : ''}>${htmlEncode(item.title)}</A>`;
-
-          this.progress.count++;
-          if (this.progress.count / this.progress.totalCount > (this.progress.value + 10) / 100) {
-            this.progress.value += 10;
-          }
-        }
-      }
-      return html;
     },
   },
   mounted() {
