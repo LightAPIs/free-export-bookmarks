@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.3.0...v1.4.0) (2021-05-09)
+
+
+### Features
+
+* **build:** 打包 Opera 版本 ([82c86d4](https://github.com/LightAPIs/free-export-bookmarks/commit/82c86d4d2a3762fdc26089c24851bb46cdfb4fa6))
+
 ## [1.3.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.2.1...v1.3.0) (2021-05-04)
 
 
