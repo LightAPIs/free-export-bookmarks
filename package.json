@@ -8,8 +8,10 @@
   "scripts": {
     "build-chrome-watch": "vue-cli-service build-watch --mode chrome",
     "build-firefox-watch": "vue-cli-service build-watch --mode firefox",
+    "build-opera-watch": "vue-cli-service build-watch --mode opera",
     "build-chrome": "vue-cli-service build --mode chromezip",
     "build-firefox": "vue-cli-service build --mode firefoxzip",
+    "build-opera": "vue-cli-service build --mode operazip",
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix 'src/**/*.{js,vue,scss}'",
     "format": "prettier --write 'src/**/*.{js,vue,scss}'",
@@ -29,7 +31,7 @@
   },
   "standard-version": {
     "scripts": {
-      "posttag": "npm run build-chrome && npm run build-firefox"
+      "posttag": "npm run build-chrome && npm run build-firefox && npm run build-opera"
     }
   },
   "dependencies": {

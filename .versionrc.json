@@ -19,6 +19,14 @@
     {
       "filename": "./src/firefox/manifest.development.json",
       "type": "json"
+    },
+    {
+      "filename": "./src/opera/manifest.production.json",
+      "type": "json"
+    },
+    {
+      "filename": "./src/opera/manifest.development.json",
+      "type": "json"
     }
   ]
 }
