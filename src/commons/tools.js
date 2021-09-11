@@ -157,17 +157,12 @@ const tools = {
       if (item.children) {
         if (
           settings.noParentFolders &&
-          item.id != '1' &&
-          item.id != '2' &&
-          item.id != 'menu________' &&
-          item.id != 'toolbar_____' &&
-          item.id != 'unfiled_____' &&
-          item.id != 'mobile______'
+          !['1', '2', '3', '4', '5', '6', 'menu________', 'toolbar_____', 'unfiled_____', 'mobile______'].indluces(item.id)
         ) {
           html += `${await this.traverse(item.children, settings, '', isNoOther, progressHandle)}`;
         } else if (
           settings.noOtherBookmarks &&
-          (item.id == '2' || item.id == 'toolbar_____' || item.id == 'unfiled_____' || item.id == 'mobile______')
+          ['2', '3', '4', '5', '6', 'toolbar_____', 'unfiled_____', 'mobile______'].includes(item.id)
         ) {
           html += `${await this.traverse(item.children, settings, '', true, progressHandle)}`;
         } else {
@@ -186,10 +181,17 @@ ${space}<DL><p>${await this.traverse(item.children, settings, space, isNoOther, 
 ${space}</DL><p>`;
         }
       } else {
-        html += `
+        //? 仅 Firefox 中存在 type 属性
+        if (item.type === 'separator') {
+          //! 处理 Firefox 中分隔符的情况
+          html += `
+${settings.noParentFolders ? (isNoOther ? '    ' : '        ') : space}<HR>`;
+        } else {
+          html += `
 ${settings.noParentFolders ? (isNoOther ? '    ' : '        ') : space}<DT><A HREF="${item.url}"${
-          settings.includeDate ? ' ADD_DATE="' + (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') + '"' : ''
-        }${settings.includeIcon ? ' ICON="' + (await this.getIcon(item.url)) + '"' : ''}>${this.htmlEncode(item.title)}</A>`;
+            settings.includeDate ? ' ADD_DATE="' + (item.dateAdded ? item.dateAdded.toString().slice(0, 10) : '0') + '"' : ''
+          }${settings.includeIcon ? ' ICON="' + (await this.getIcon(item.url)) + '"' : ''}>${this.htmlEncode(item.title)}</A>`;
+        }
 
         typeof progressHandle === 'function' && progressHandle();
       }
