@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.4.1...v1.4.2) (2021-09-11)
+
+
+### Bug Fixes
+
+* **manifest:** 修复在 Firefox 中图标提示内容显示异常的问题 ([c2bad3c](https://github.com/LightAPIs/free-export-bookmarks/commit/c2bad3ce30b7a02e3d7818050c8a8edb2d360139))
+
 ### [1.4.1](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.4.0...v1.4.1) (2021-09-11)
 
 

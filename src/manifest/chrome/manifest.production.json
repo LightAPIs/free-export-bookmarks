@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "author": "pana",
   "homepage_url": "https://github.com/LightAPIs/free-export-bookmarks",
   "default_locale": "en",
