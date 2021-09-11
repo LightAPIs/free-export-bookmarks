@@ -243,7 +243,7 @@ export default {
         count: 0,
         totalCount: 0,
       },
-      isChrome: process.env.VUE_APP_TITLE === 'chrome' || process.env.VUE_APP_TITLE === 'opera',
+      isChrome: process.env.VUE_APP_TITLE === 'chrome',
     };
   },
   watch: {

@@ -36,7 +36,6 @@ npm install
 
 - 构建 chrome 版本: `npm run build-chrome`
 - 构建 firefox 版本: `npm run build-firefox`
-- 构建 opera 版本: `npm run build-opera`
 
 ### 相关目录及文件
 
