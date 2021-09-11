@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "__MSG_extensionName__",
+  "name": "__MSG_extensionName__ (Dev)",
   "description": "__MSG_extensionDescription__",
   "version": "1.4.0",
   "author": "pana",
@@ -17,7 +17,8 @@
     "128": "icons/app/icon-128.png"
   },
   "background": {
-    "page": "background.html"
+    "page": "background.html",
+    "persistent": false
   },
   "browser_action": {
     "default_icon": {
@@ -30,8 +31,8 @@
       "96": "icons/app/icon-96.png",
       "128": "icons/app/icon-128.png"
     },
-    "default_title": "__MSG_extensionName__\n__MSG_extensionTip__"
+    "default_title": "__MSG_extensionName__ (Dev)\n__MSG_extensionTip__"
   },
-  "permissions": ["bookmarks", "storage", "contextMenus", "downloads"],
-  "content_security_policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src * data:; connect-src * blob:; object-src 'none';"
+  "permissions": ["bookmarks", "storage", "edge://favicon/*"],
+  "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data: edge:; connect-src * blob:; object-src 'none';"
 }

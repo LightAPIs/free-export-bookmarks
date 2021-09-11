@@ -1,6 +1,6 @@
 {
   "name": "free-export-bookmarks",
-  "description": "A chrome-extension project",
+  "description": "A extension project",
   "version": "1.4.0",
   "author": "pana <new4wang@outlook.com>",
   "license": "MIT",
@@ -8,8 +8,10 @@
   "scripts": {
     "build-chrome-watch": "vue-cli-service build-watch --mode chrome",
     "build-firefox-watch": "vue-cli-service build-watch --mode firefox",
+    "build-edge-watch": "vue-cli-service build-watch --mode edge",
     "build-chrome": "vue-cli-service build --mode chromezip",
     "build-firefox": "vue-cli-service build --mode firefoxzip",
+    "build-edge": "vue-cli-service build --mode edgezip",
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix 'src/**/*.{js,vue,scss}'",
     "format": "prettier --write 'src/**/*.{js,vue,scss}'",
@@ -29,7 +31,7 @@
   },
   "standard-version": {
     "scripts": {
-      "posttag": "npm run build-chrome && npm run build-firefox"
+      "posttag": "npm run build-chrome && npm run build-firefox && npm run build-edge"
     }
   },
   "dependencies": {

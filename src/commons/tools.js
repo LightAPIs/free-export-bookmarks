@@ -66,7 +66,7 @@ const tools = {
     const exportBlob = new Blob([content]);
     const downloadUrl = urlObject.createObjectURL(exportBlob);
 
-    if (process.env.VUE_APP_TITLE === 'chrome') {
+    if (process.env.VUE_APP_TITLE === 'chrome' || process.env.VUE_APP_TITLE === 'edge') {
       let saveLink = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
       saveLink.href = downloadUrl;
       saveLink.download = filename;

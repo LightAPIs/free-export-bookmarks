@@ -72,7 +72,7 @@
             {{ $ui.get('indexDrawerDisplayTitle') }}
           </template>
           <el-divider></el-divider>
-          <template v-if="isChrome">
+          <template v-if="isChromium">
             <div>
               <el-switch
                 v-model="settings.showIcon"
@@ -100,7 +100,7 @@
             {{ $ui.get('indexDrawerExportTitle') }}
           </template>
           <el-divider></el-divider>
-          <template v-if="isChrome">
+          <template v-if="isChromium">
             <div>
               <el-switch
                 v-model="settings.includeIcon"
@@ -125,13 +125,13 @@
             <el-switch
               v-model="settings.noOtherBookmarks"
               :active-text="
-                isChrome ? $ui.get('indexDrawerExportNoOtherBookmarksText') : $ui.get('indexDrawerExportNoOtherBookmarksTextFirefox')
+                isChromium ? $ui.get('indexDrawerExportNoOtherBookmarksText') : $ui.get('indexDrawerExportNoOtherBookmarksTextFirefox')
               "
               @change="handleChange"
             ></el-switch>
           </div>
           <p>
-            {{ isChrome ? $ui.get('indexDrawerExportNoOtherBookmarksTip') : $ui.get('indexDrawerExportNoOtherBookmarksTipFirefox') }}
+            {{ isChromium ? $ui.get('indexDrawerExportNoOtherBookmarksTip') : $ui.get('indexDrawerExportNoOtherBookmarksTipFirefox') }}
           </p>
           <el-divider></el-divider>
           <div>
@@ -142,7 +142,7 @@
             ></el-switch>
           </div>
           <p>
-            {{ isChrome ? $ui.get('indexDrawerExportNoParentFoldersTip') : $ui.get('indexDrawerExportNoParentFoldersTipFirefox') }}
+            {{ isChromium ? $ui.get('indexDrawerExportNoParentFoldersTip') : $ui.get('indexDrawerExportNoParentFoldersTipFirefox') }}
           </p>
           <el-divider></el-divider>
         </el-collapse-item>
@@ -246,7 +246,7 @@ export default {
         count: 0,
         totalCount: 0,
       },
-      isChrome: process.env.VUE_APP_TITLE === 'chrome',
+      isChromium: process.env.VUE_APP_TITLE === 'chrome' || process.env.VUE_APP_TITLE === 'edge',
     };
   },
   watch: {
@@ -335,10 +335,10 @@ export default {
       return data.title.indexOf(value) !== -1;
     },
     handleChange() {
-      const { settings, isChrome } = this;
+      const { settings, isChromium } = this;
       chrome.storage.local.set(
         {
-          settings: isChrome ? settings : Object.assign({}, settings),
+          settings: isChromium ? settings : Object.assign({}, settings),
         },
         () => {
           console.log('The settings have been set.');

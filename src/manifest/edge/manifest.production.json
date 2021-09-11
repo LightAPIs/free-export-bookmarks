@@ -17,7 +17,8 @@
     "128": "icons/app/icon-128.png"
   },
   "background": {
-    "page": "background.html"
+    "page": "background.html",
+    "persistent": false
   },
   "browser_action": {
     "default_icon": {
@@ -32,6 +33,6 @@
     },
     "default_title": "__MSG_extensionName__\n__MSG_extensionTip__"
   },
-  "permissions": ["bookmarks", "storage", "contextMenus", "downloads"],
-  "content_security_policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src * data:; connect-src * blob:; object-src 'none';"
+  "permissions": ["bookmarks", "storage", "edge://favicon/*"],
+  "content_security_policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src * data: edge:; connect-src * blob:; object-src 'none';"
 }
