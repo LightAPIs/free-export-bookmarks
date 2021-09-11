@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.4.0...v1.4.1) (2021-09-11)
+
+
+### Bug Fixes
+
+* **app.vue:** 修复在 Firefox 的书签导出页面中分隔符显标为空白的问题 ([7f37f64](https://github.com/LightAPIs/free-export-bookmarks/commit/7f37f643ddac5f0d200158c96ff29bce1d11d015))
+* **tools.js:** 修复将 Firefox 中的分隔符导出成空白书签的问题 ([1ba18a9](https://github.com/LightAPIs/free-export-bookmarks/commit/1ba18a9f816330081aba70c8bee650e2b606c5f4))
+
 ## [1.4.0](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.3.0...v1.4.0) (2021-05-09)
 
 
