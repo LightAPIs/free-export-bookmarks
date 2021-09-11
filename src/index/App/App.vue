@@ -44,7 +44,10 @@
               <img v-if="data.url" :src="'chrome://favicon/' + data.url" />
               <i v-else class="el-icon-folder"></i>
             </template>
-            <el-tooltip v-if="data.url" placement="right-start">
+            <span v-if="data.type === 'separator'">
+              <el-divider class="bookmarks-divider"></el-divider>
+            </span>
+            <el-tooltip v-else-if="data.url" placement="right-start">
               <div slot="content">
                 {{ node.label }}
                 <br />
@@ -454,6 +457,9 @@ body {
     .extension-name {
       font-size: 24px;
     }
+  }
+  .bookmarks-divider {
+    width: 75vw;
   }
 }
 </style>
