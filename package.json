@@ -34,8 +34,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-ui": "^2.14.1",
-    "vue": "^2.6.12"
+    "element-ui": "^2.15.6",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
@@ -59,7 +59,7 @@
     "sass-loader": "^8.0.2",
     "standard-version": "^9.0.0",
     "vue-cli-plugin-chrome-ext": "~0.0.5",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.6.14",
     "zip-webpack-plugin": "^4.0.1"
   },
   "config": {
