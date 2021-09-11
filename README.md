@@ -1,6 +1,6 @@
 # Free Export Bookmarks
 
-[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/free-export-bookmarks)](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
+[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/free-export-bookmarks)](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
 
 > 自由书签导出工具
 
@@ -15,6 +15,10 @@
 ### Firefox
 
 前往 [Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/) 进行下载安装。
+
+### Edge
+
+前往 [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/) 进行下载安装。
 
 ## 开发编译
 
@@ -36,6 +40,7 @@ npm install
 
 - 构建 chrome 版本: `npm run build-chrome`
 - 构建 firefox 版本: `npm run build-firefox`
+- 构建 edge 版本: `npm run build-edge`
 
 ### 相关目录及文件
 
