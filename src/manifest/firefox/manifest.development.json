@@ -30,13 +30,8 @@
       "96": "icons/app/icon-96.png",
       "128": "icons/app/icon-128.png"
     },
-    "default_title": "__MSG_extensionName__ (Dev)\n__MSG_extensionTip__"
+    "default_title": "__MSG_extensionName__ (Dev) - __MSG_extensionTip__"
   },
-  "permissions": [
-    "bookmarks",
-    "storage",
-    "contextMenus",
-    "downloads"
-  ],
+  "permissions": ["bookmarks", "storage", "contextMenus", "downloads"],
   "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data:; connect-src * blob:; object-src 'none';"
 }
