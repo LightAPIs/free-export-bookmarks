@@ -22,12 +22,12 @@ chromeName.forEach(name => {
 
 let outputDir = '';
 let copyFiles = '';
-const fileName = productionMode ? 'build' : 'dist';
-outputDir = `${fileName}/${process.env.VUE_APP_TITLE}`;
+const folderName = productionMode ? 'build' : 'dist';
+outputDir = `${folderName}/${process.env.VUE_APP_TITLE}`;
 copyFiles = [
   {
-    from: path.resolve(`src/${process.env.VUE_APP_TITLE}/manifest.${productionMode ? 'production' : 'development'}.json`),
-    to: `${path.resolve(fileName)}/${process.env.VUE_APP_TITLE}/manifest.json`,
+    from: path.resolve(`src/manifest/${process.env.VUE_APP_TITLE}/manifest.${productionMode ? 'production' : 'development'}.json`),
+    to: `${path.resolve(folderName)}/${process.env.VUE_APP_TITLE}/manifest.json`,
   },
 ];
 

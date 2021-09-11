@@ -5,19 +5,19 @@
       "type": "json"
     },
     {
-      "filename": "./src/chrome/manifest.production.json",
+      "filename": "./src/manifest/chrome/manifest.production.json",
       "type": "json"
     },
     {
-      "filename": "./src/chrome/manifest.development.json",
+      "filename": "./src/manifest/chrome/manifest.development.json",
       "type": "json"
     },
     {
-      "filename": "./src/firefox/manifest.production.json",
+      "filename": "./src/manifest/firefox/manifest.production.json",
       "type": "json"
     },
     {
-      "filename": "./src/firefox/manifest.development.json",
+      "filename": "./src/manifest/firefox/manifest.development.json",
       "type": "json"
     }
   ]
