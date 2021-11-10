@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.3](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.4.2...v1.4.3) (2021-11-10)
+
+
+### Bug Fixes
+
+* **export:** 修复在不导出父文件夹时出错的问题 ([f9faad0](https://github.com/LightAPIs/free-export-bookmarks/commit/f9faad009f5eb29acd5236428136f0ea45d3ff8c))
+
 ### [1.4.2](https://github.com/LightAPIs/free-export-bookmarks/compare/v1.4.1...v1.4.2) (2021-09-11)
 
 
