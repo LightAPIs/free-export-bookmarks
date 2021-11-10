@@ -155,15 +155,9 @@ const tools = {
     for (let i = 0; i < arr.length; i++) {
       const item = arr[i];
       if (item.children) {
-        if (
-          settings.noParentFolders &&
-          !['1', '2', '3', '4', '5', '6', 'menu________', 'toolbar_____', 'unfiled_____', 'mobile______'].indluces(item.id)
-        ) {
+        if (settings.noParentFolders && !['1', '2', 'menu________', 'toolbar_____', 'unfiled_____', 'mobile______'].includes(item.id)) {
           html += `${await this.traverse(item.children, settings, '', isNoOther, progressHandle)}`;
-        } else if (
-          settings.noOtherBookmarks &&
-          ['2', '3', '4', '5', '6', 'toolbar_____', 'unfiled_____', 'mobile______'].includes(item.id)
-        ) {
+        } else if (settings.noOtherBookmarks && ['2', 'toolbar_____', 'unfiled_____', 'mobile______'].includes(item.id)) {
           html += `${await this.traverse(item.children, settings, '', true, progressHandle)}`;
         } else {
           html += `
