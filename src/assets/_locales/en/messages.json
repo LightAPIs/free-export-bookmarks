@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Free Export Bookmarks"
+    "message": "Selective Bookmarks Export Tool"
   },
   "extensionDescription": {
     "message": "Freely export the required bookmarks as HTML file"
@@ -93,7 +93,7 @@
     "message": "Support"
   },
   "indexDrawerAboutSupportLabel": {
-    "message": "Free export bookmarks is a free and open source bookmarks export tool, which helps users to export part of their bookmarks for saving or sharing, and never collect any private information from users."
+    "message": "Selective Bookmarks Export Tool is a free and open source bookmarks export tool, which helps users to export part of their bookmarks for saving or sharing, and never collect any private information from users."
   },
   "indexDrawerAboutSourceCodeText": {
     "message": "Source code (MIT Liscense)"
@@ -105,7 +105,7 @@
     "message": "Thanks"
   },
   "indexDrawerAboutThanksLabel": {
-    "message": "The birth of Free Export Bookmarks is inseparable from the support and help provided by the following open source projects:"
+    "message": "The birth of Selective Bookmarks Export Tool is inseparable from the support and help provided by the following open source projects:"
   },
   "contextMenuExport": {
     "message": "Export current bookmark"

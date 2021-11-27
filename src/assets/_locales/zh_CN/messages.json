@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Free Export Bookmarks"
+    "message": "Selective Bookmarks Export Tool"
   },
   "extensionDescription": {
     "message": "自由导出所需要的书签为 HTML 文件"
@@ -93,7 +93,7 @@
     "message": "支持"
   },
   "indexDrawerAboutSupportLabel": {
-    "message": "Free Export Bookmarks 是一款免费开源的书签导出工具，皆在帮助用户更方便导出所需的部分书签以供保存或分享，并且绝不会收集发送用户的任何隐私信息。"
+    "message": "Selective Bookmarks Export Tool 是一款免费开源的书签导出工具，皆在帮助用户更方便导出所需的部分书签以供保存或分享，并且绝不会收集发送用户的任何隐私信息。"
   },
   "indexDrawerAboutSourceCodeText": {
     "message": "源代码 (MIT Liscense)"
@@ -105,7 +105,7 @@
     "message": "鸣谢"
   },
   "indexDrawerAboutThanksLabel": {
-    "message": "Free Export Bookmarks 的诞生，离不开以下开源项目所提供的支持和帮助："
+    "message": "Selective Bookmarks Export Tool 的诞生，离不开以下开源项目所提供的支持和帮助："
   },
   "contextMenuExport": {
     "message": "导出当前书签"

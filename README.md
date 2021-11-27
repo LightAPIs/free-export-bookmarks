@@ -1,61 +1,62 @@
-# Free Export Bookmarks
+# Selective Bookmarks Export Tool
 
-[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/free-export-bookmarks)](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
+- English
+- [中文版](/README_CN.md)
 
-> 自由书签导出工具
+[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/selective-bookmarks-export-tool/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/selective-bookmarks-export-tool)](https://addons.mozilla.org/zh-CN/firefox/addon/selective-bookmarks-export-tool/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
 
-允许用户自定义选择导出所需要的书签为 HTML 文件，并且可以自行决定导出内容的数据结构，同时在选择书签时支持通过关键字进行结果过滤。
+> Freely bookmark export tool
 
-## 安装方法
+It allows users to choose the bookmarks they want to export as HTML file, to decide the data structure of the exported content, and to filter the results by keywords when selecting bookmarks.
+
+## Installation
 
 ### Chrome
 
-前往 [chrome 网上应用店](https://chrome.google.com/webstore/detail/free-export-bookmarks/dkbihgadoohejmlhpffffbmbhmkhjbfi) 进行下载安装。
+Go to the [Chrome Web Store](https://chrome.google.com/webstore/detail/selective-bookmarks-export-tool/dkbihgadoohejmlhpffffbmbhmkhjbfi) to download and install.
 
 ### Firefox
 
-前往 [Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/free-export-bookmarks/) 进行下载安装。
+Go to the [Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/selective-bookmarks-export-tool/) to download and install.
 
 ### Edge
 
-前往 [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) 进行下载安装。
+Go to the [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) to download and install.
 
-## 开发编译
+## Development
 
-### 环境需求
+### Environment
 
-- 安装 [Node.js](https://nodejs.org/) 8.9 及以上 (_新版本已集成 npm，若您的网络环境不佳，推荐安装使用 [cnpm](https://github.com/cnpm/cnpm)_)
+- Install [Node.js](https://nodejs.org/) 8.9 and above (_new version has integrated npm_)
 
-### 初始化指令
+### Initialization
 
 ```bash
-# 安装 Vue CLI
+# Install Vue CLI
 npm install @vue/cli -g
 
-# 安装依赖
+# Installation dependency
 npm install
 ```
 
-### 构建指令
+### Build
 
-- 构建 chrome 版本: `npm run build-chrome`
-- 构建 firefox 版本: `npm run build-firefox`
-- 构建 edge 版本: `npm run build-edge`
+- Build the Chrome version: `npm run build-chrome`
+- Build the Firefox version: `npm run build-firefox`
+- Build the Edge version: `npm run build-edge`
 
-### 相关目录及文件
+### Related
 
-- 与打包相关的配置位于 `vue.config.js` 文件中
-- 扩展程序源代码位于 `src` 目录中
-- 未改动配置的情况下，`src/assets` 目录下所有文件及文件夹在打包时会自动复制到项目根目录
+- Package configuration is located in `vue.config.js`
+- Extension source code is in the `src` directory
+- Without changing the configuration, all files and folders in the `src/assets` directory will be automatically copied to the root directory when packaging
 
-## 致谢
-
-本项目基于以下开源项目进行构建：
+## Thanks
 
 - [zloirock/core-js](https://github.com/zloirock/core-js)
 - [ElemeFE/element](https://github.com/ElemeFE/element)
 - [vuejs/vue](https://github.com/vuejs/vue)
 
-## 许可证
+## Licence
 
 [MIT](/LICENSE) License
