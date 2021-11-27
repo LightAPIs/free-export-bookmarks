@@ -3,7 +3,7 @@
 - English
 - [中文版](/README_CN.md)
 
-[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/selective-bookmarks-export-tool/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/selective-bookmarks-export-tool)](https://addons.mozilla.org/zh-CN/firefox/addon/selective-bookmarks-export-tool/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
+[![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/selective-bookmarks-export-tool/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/bookmarks-export-tool)](https://addons.mozilla.org/en-US/firefox/addon/bookmarks-export-tool/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
 
 > Freely bookmark export tool
 
@@ -17,7 +17,7 @@ Go to the [Chrome Web Store](https://chrome.google.com/webstore/detail/selective
 
 ### Firefox
 
-Go to the [Mozilla Add-ons](https://addons.mozilla.org/zh-CN/firefox/addon/selective-bookmarks-export-tool/) to download and install.
+Go to the [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/bookmarks-export-tool/) to download and install.
 
 ### Edge
 
