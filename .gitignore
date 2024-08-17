@@ -23,8 +23,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-
-# file
-jsconfig.json
-tsconfig.json
-vetur.config.js

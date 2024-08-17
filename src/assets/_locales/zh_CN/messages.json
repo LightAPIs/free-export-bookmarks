@@ -101,12 +101,6 @@
   "indexDrawerAboutFeedbackText": {
     "message": "问题反馈"
   },
-  "indexDrawerAboutThanksText": {
-    "message": "鸣谢"
-  },
-  "indexDrawerAboutThanksLabel": {
-    "message": "Selective Bookmarks Export Tool 的诞生，离不开以下开源项目所提供的支持和帮助："
-  },
   "contextMenuExport": {
     "message": "导出当前书签"
   }

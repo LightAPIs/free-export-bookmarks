@@ -2,71 +2,62 @@
   "name": "free-export-bookmarks",
   "description": "A extension project",
   "version": "1.4.4",
-  "author": "pana <new4wang@outlook.com>",
+  "author": "dragonish <no.web.developer@outlook.com>",
   "license": "MIT",
+  "type": "module",
   "private": true,
   "scripts": {
-    "build-chrome-watch": "vue-cli-service build-watch --mode chrome",
-    "build-firefox-watch": "vue-cli-service build-watch --mode firefox",
-    "build-edge-watch": "vue-cli-service build-watch --mode edge",
-    "build-chrome": "vue-cli-service build --mode chromezip",
-    "build-firefox": "vue-cli-service build --mode firefoxzip",
-    "build-edge": "vue-cli-service build --mode edgezip",
-    "lint": "vue-cli-service lint",
-    "fix": "eslint --fix 'src/**/*.{js,vue,scss}'",
-    "format": "prettier --write 'src/**/*.{js,vue,scss}'",
-    "release": "standard-version"
+    "watch:c": "cross-env NODE_ENV=development BROWSER_ENV=chrome vite build --watch",
+    "watch:f": "cross-env NODE_ENV=development BROWSER_ENV=firefox vite build --watch",
+    "watch:e": "cross-env NODE_ENV=development BROWSER_ENV=edge vite build --watch",
+    "build:c": "cross-env BROWSER_ENV=chrome vite build",
+    "build:f": "cross-env BROWSER_ENV=firefox vite build",
+    "build:e": "cross-env BROWSER_ENV=edge vite build",
+    "build": "pnpm run build:c && pnpm run build:f && pnpm run build:e",
+    "release": "standard-version",
+    "test": "vue-tsc && cross-env NODE_NO_WARNINGS=1 mocha"
   },
-  "lint-staged": {
-    "src/**/*.{js,vue,scss}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/chai": "^4.3.17",
+    "@types/chrome": "^0.0.270",
+    "@types/firefox-webext-browser": "^120.0.4",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.15.0",
+    "@typescript-eslint/parser": "^8.1.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "chai": "^5.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.9.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^15.9.0",
+    "jsdom": "^24.1.1",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^10.7.3",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-html-location": "^0.1.2",
+    "standard-version": "^9.5.0",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "8.1.0",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-element-plus": "^0.8.0",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
   },
   "standard-version": {
+    "skip": {
+      "changelog": true
+    },
     "scripts": {
-      "posttag": "npm run build-chrome && npm run build-firefox && npm run build-edge"
+      "posttag": "pnpm run build"
     }
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "element-ui": "^2.15.6",
-    "vue": "^2.6.14"
-  },
-  "devDependencies": {
-    "@commitlint/config-conventional": "^11.0.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-component": "^1.1.1",
-    "commitizen": "^4.2.2",
-    "commitlint": "^11.0.0",
-    "copy-webpack-plugin": "^6.3.2",
-    "cz-customizable": "^6.3.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-vue": "^7.0.0-beta.4",
-    "husky": "^4.3.6",
-    "lint-staged": "^10.5.3",
-    "prettier": "^1.19.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "standard-version": "^9.0.0",
-    "vue-cli-plugin-chrome-ext": "~0.0.5",
-    "vue-template-compiler": "^2.6.14",
-    "zip-webpack-plugin": "^4.0.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    }
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.8.0",
+    "pinia": "^2.2.2",
+    "vue": "^3.4.38"
   }
 }

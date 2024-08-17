@@ -27,35 +27,29 @@ Go to the [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/det
 
 ### Environment
 
-- Install [Node.js](https://nodejs.org/) 8.9 and above (_new version has integrated npm_)
+- Install [Node.js](https://nodejs.org/) 20
 
 ### Initialization
 
 ```bash
-# Install Vue CLI
-npm install @vue/cli -g
+# Install pnpm
+npm install -g pnpm
 
 # Installation dependency
-npm install
+pnpm install
 ```
 
 ### Build
 
-- Build the Chrome version: `npm run build-chrome`
-- Build the Firefox version: `npm run build-firefox`
-- Build the Edge version: `npm run build-edge`
+- Build the Chrome version: `pnpm run build:c`
+- Build the Firefox version: `pnpm run build:f`
+- Build the Edge version: `pnpm run build:e`
 
 ### Related
 
-- Package configuration is located in `vue.config.js`
+- Package configuration is located in `vite.config.ts`
 - Extension source code is in the `src` directory
 - Without changing the configuration, all files and folders in the `src/assets` directory will be automatically copied to the root directory when packaging
-
-## Thanks
-
-- [zloirock/core-js](https://github.com/zloirock/core-js)
-- [ElemeFE/element](https://github.com/ElemeFE/element)
-- [vuejs/vue](https://github.com/vuejs/vue)
 
 ## Licence
 

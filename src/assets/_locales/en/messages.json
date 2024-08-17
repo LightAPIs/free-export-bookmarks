@@ -101,12 +101,6 @@
   "indexDrawerAboutFeedbackText": {
     "message": "Feedback"
   },
-  "indexDrawerAboutThanksText": {
-    "message": "Thanks"
-  },
-  "indexDrawerAboutThanksLabel": {
-    "message": "The birth of Selective Bookmarks Export Tool is inseparable from the support and help provided by the following open source projects:"
-  },
   "contextMenuExport": {
     "message": "Export current bookmark"
   }

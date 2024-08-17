@@ -5,27 +5,15 @@
       "type": "json"
     },
     {
-      "filename": "./src/manifest/chrome/manifest.production.json",
+      "filename": "./src/manifest/chrome/manifest.json",
       "type": "json"
     },
     {
-      "filename": "./src/manifest/chrome/manifest.development.json",
+      "filename": "./src/manifest/firefox/manifest.json",
       "type": "json"
     },
     {
-      "filename": "./src/manifest/firefox/manifest.production.json",
-      "type": "json"
-    },
-    {
-      "filename": "./src/manifest/firefox/manifest.development.json",
-      "type": "json"
-    },
-    {
-      "filename": "./src/manifest/edge/manifest.production.json",
-      "type": "json"
-    },
-    {
-      "filename": "./src/manifest/edge/manifest.development.json",
+      "filename": "./src/manifest/edge/manifest.json",
       "type": "json"
     }
   ]
