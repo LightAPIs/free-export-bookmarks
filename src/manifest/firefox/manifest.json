@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "author": "dragonish",
   "homepage_url": "https://github.com/LightAPIs/free-export-bookmarks",
   "default_locale": "en",
@@ -17,7 +17,9 @@
     "128": "icons/app/icon-128.png"
   },
   "background": {
-    "scripts": ["background/index.js"],
+    "scripts": [
+      "background/index.js"
+    ],
     "type": "module"
   },
   "browser_specific_settings": {
@@ -28,5 +30,10 @@
   "action": {
     "default_title": "__MSG_extensionName__ - __MSG_extensionTip__"
   },
-  "permissions": ["bookmarks", "storage", "menus", "downloads"]
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "menus",
+    "downloads"
+  ]
 }
