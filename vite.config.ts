@@ -58,9 +58,10 @@ export default defineConfig({
       targets: [
         {
           src: `src/manifest/${browserName}/manifest.json`,
-          dest: `${modeDir}/${browserName}`,
+          dest: outDir,
         },
       ],
+      hook: 'writeBundle',
     }),
     HTMLLocation({
       filename: input => input.replace('src/', ''),
