@@ -2,6 +2,7 @@ import i18n from '@/common/i18n';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import App from './App.vue';
+import 'element-plus/theme-chalk/dark/css-vars.css';
 
 document.title = i18n('indexTitle');
 const isChromium = import.meta.env.IS_CHROMIUM;

@@ -16,6 +16,7 @@
         clearable
       ></el-input>
       <el-button type="info" class="bookmarks-settings-btn" :title="i18n('indexDrawerTitle')" :icon="Setting" circle @click="drawerShow = true"></el-button>
+      <el-button class="bookmarks-settings-btn" :icon="isDark ? Moon : Sunny" circle @click="toggleDark()"></el-button>
     </el-header>
     <div v-show="progress.show" style="padding: 0 10px">
       <el-progress :percentage="progress.value"></el-progress>
@@ -53,9 +54,10 @@
 <script setup lang="ts">
 import i18n from '@/common/i18n';
 import { ref, reactive, onMounted } from 'vue';
+import { useDark, useToggle } from '@vueuse/core';
 import { useSettingsStore } from '@/stores/settings';
 import { ElMessage, ElLoading, type ElTree } from 'element-plus';
-import { Folder, Loading, Search, Setting } from '@element-plus/icons-vue';
+import { Folder, Loading, Search, Setting, Moon, Sunny } from '@element-plus/icons-vue';
 import { downloadTextFile, htmlFileGenerator, faviconURL } from '@/common/tools';
 import BSettingsDrawer from '@/components/BSettingsDrawer.vue';
 
@@ -65,6 +67,9 @@ interface TreeNodeData {
 }
 
 const settingsStore = useSettingsStore();
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
 const treeRef = ref<InstanceType<typeof ElTree>>();
 
@@ -223,7 +228,7 @@ body {
 }
 
 .bookmarks-header {
-  background-color: #2e4f8c;
+  background-color: #162848;
   padding-top: 14px;
 }
 
@@ -234,6 +239,7 @@ body {
 
 .bookmarks-settings-btn {
   float: right;
+  margin-left: 12px;
 }
 
 .bookmarks-divider {
