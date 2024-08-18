@@ -40,17 +40,7 @@
           <span v-if="data.type === 'separator'">
             <el-divider class="bookmarks-divider"></el-divider>
           </span>
-          <el-tooltip v-else-if="data.url" placement="right-start">
-            <template #content>
-              {{ node.label }}
-              <br />
-              {{ data.url }}
-            </template>
-            <span>
-              {{ node.label }}
-            </span>
-          </el-tooltip>
-          <span v-else>
+          <span v-else :title="node.label + (data.url ? '\n' + data.url : '')">
             {{ node.label }}
           </span>
         </template>
