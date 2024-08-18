@@ -20,6 +20,11 @@
     "scripts": ["background/index.js"],
     "type": "module"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "selectivebookmarksexporttool@addons.com"
+    }
+  },
   "action": {
     "default_title": "__MSG_extensionName__ - __MSG_extensionTip__"
   },
