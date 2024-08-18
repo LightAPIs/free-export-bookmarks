@@ -214,6 +214,14 @@ onMounted(async () => {
 </script>
 
 <style>
+body {
+  overflow: hidden;
+}
+
+#bookmarks-index-main {
+  height: calc(100vh - 60px);
+}
+
 .bookmarks-header {
   background-color: #2e4f8c;
   padding-top: 14px;
