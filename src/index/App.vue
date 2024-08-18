@@ -10,7 +10,7 @@
       <el-input
         v-model="filterText"
         class="bookmarks-input"
-        :placehoder="i18n('indexInputPlaceholder')"
+        :placeholder="i18n('indexInputPlaceholder')"
         :prefix-icon="searching ? Loading : Search"
         autofocus
         clearable
