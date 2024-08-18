@@ -1,11 +1,11 @@
 # Selective Bookmarks Export Tool
 
-- [English](/README.md)
-- 中文版
-
 [![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/selective-bookmarks-export-tool/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/bookmarks-export-tool)](https://addons.mozilla.org/zh-CN/firefox/addon/bookmarks-export-tool/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
 
 > 自由地书签导出工具
+
+- [English](/README.md)
+- 中文版
 
 允许用户自定义选择导出所需要的书签为 HTML 文件，并且可以自行决定导出内容的数据结构，同时在选择书签时支持通过关键字进行结果过滤。
 

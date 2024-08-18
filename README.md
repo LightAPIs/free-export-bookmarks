@@ -1,11 +1,11 @@
 # Selective Bookmarks Export Tool
 
-- English
-- [中文版](/README_CN.md)
-
 [![Release](https://img.shields.io/github/v/release/LightAPIs/free-export-bookmarks.svg?color=orange)](https://github.com/LightAPIs/free-export-bookmarks/releases/latest) [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/dkbihgadoohejmlhpffffbmbhmkhjbfi?maxAge=86400)](https://chrome.google.com/webstore/detail/selective-bookmarks-export-tool/dkbihgadoohejmlhpffffbmbhmkhjbfi) [![Mozilla Add-ons](https://img.shields.io/amo/v/bookmarks-export-tool)](https://addons.mozilla.org/en-US/firefox/addon/bookmarks-export-tool/) [![Microsoft Edge Addons](https://img.shields.io/badge/-edge_addons-blue.svg)](https://microsoftedge.microsoft.com/addons/detail/eedggiamkopgoloilafiinldaablcohj) [![MIT](https://img.shields.io/badge/license-MIT-green)](/LICENSE)
 
 > Freely bookmark export tool
+
+- English
+- [中文版](/README_CN.md)
 
 It allows users to choose the bookmarks they want to export as HTML file, to decide the data structure of the exported content, and to filter the results by keywords when selecting bookmarks.
 
