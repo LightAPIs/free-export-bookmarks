@@ -44,6 +44,7 @@
     "unplugin-element-plus": "^0.8.0",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.1",
+    "vite-plugin-zip-pack": "^1.2.4",
     "vue-tsc": "^2.0.29"
   },
   "standard-version": {

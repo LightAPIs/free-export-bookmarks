@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite';
 import ElementPlus from 'unplugin-element-plus/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Copy from 'rollup-plugin-copy';
+import ZipPack from 'vite-plugin-zip-pack';
 
 const productionMode = process.env.NODE_ENV === 'production';
 const modeDir = productionMode ? 'build' : 'dist';
@@ -64,6 +65,13 @@ export default defineConfig({
     HTMLLocation({
       filename: input => input.replace('src/', ''),
     }),
+    productionMode
+      ? ZipPack({
+          inDir: outDir,
+          outDir: 'archive',
+          outFileName: `selective-bookmarks-export-tool_${browserName}_v${packageInfo.version}.zip`,
+        })
+      : undefined,
   ],
   define: {
     'import.meta.env.BROWSER': JSON.stringify(browserName),
