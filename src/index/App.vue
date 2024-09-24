@@ -7,14 +7,14 @@
       <el-button :title="i18n('indexReloadTip')" :disabled="exportLoading" @click="reloadBookmarks">
         {{ i18n('indexReloadText') }}
       </el-button>
-      <el-input
-        v-model="filterText"
-        class="bookmarks-input"
-        :placeholder="i18n('indexInputPlaceholder')"
-        :prefix-icon="searching ? Loading : Search"
-        autofocus
-        clearable
-      ></el-input>
+      <el-input v-model="filterText" class="bookmarks-input" :placeholder="i18n('indexInputPlaceholder')" autofocus clearable>
+        <template #prefix>
+          <el-icon v-if="searching" class="is-loading">
+            <loading></loading>
+          </el-icon>
+          <search v-else></search>
+        </template>
+      </el-input>
       <el-button type="info" class="bookmarks-settings-btn" :title="i18n('indexDrawerTitle')" :icon="Setting" circle @click="drawerShow = true"></el-button>
       <el-button class="bookmarks-settings-btn" :icon="isDark ? Moon : Sunny" circle @click="toggleDark()"></el-button>
     </el-header>
@@ -53,12 +53,13 @@
 
 <script setup lang="ts">
 import i18n from '@/common/i18n';
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, watch, nextTick, onMounted } from 'vue';
 import { useDark, useToggle } from '@vueuse/core';
 import { useSettingsStore } from '@/stores/settings';
 import { ElMessage, ElLoading, type ElTree } from 'element-plus';
 import { Folder, Loading, Search, Setting, Moon, Sunny } from '@element-plus/icons-vue';
 import { downloadTextFile, htmlFileGenerator, faviconURL } from '@/common/tools';
+import { debounce } from 'lodash-es';
 import BSettingsDrawer from '@/components/BSettingsDrawer.vue';
 
 type TreeKey = string | number;
@@ -88,6 +89,21 @@ const progress = reactive({
   count: 0,
   total: 0,
 });
+
+const debounced = debounce((newVal: string) => {
+  nextTick(() => {
+    treeRef.value?.filter(newVal);
+    searching.value = false;
+  });
+}, 1000);
+
+watch(
+  () => filterText.value,
+  newVal => {
+    searching.value = true;
+    debounced(newVal);
+  }
+);
 
 function progressHandler() {
   progress.count++;
