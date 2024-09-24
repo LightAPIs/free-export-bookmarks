@@ -117,7 +117,7 @@ function progressCompleted() {
 }
 
 function filterNode(value: string, data: TreeNodeData) {
-  return data.title.includes(value);
+  return data.title.includes(value) || data.url?.includes(value);
 }
 
 function exportHtml() {
