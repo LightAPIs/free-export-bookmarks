@@ -8,6 +8,7 @@ export const useSettingsStore = defineStore('settings', {
     includeDate: false,
     noOtherBookmarks: false,
     noParentFolders: false,
+    saveAs: false,
   }),
 
   actions: {

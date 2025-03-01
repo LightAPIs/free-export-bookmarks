@@ -2,57 +2,29 @@
  * Download text file.
  * @param content file content
  * @param filename filename
+ * @param saveAs save as
  * @param completed callback function
  */
-export function downloadTextFile(content: string, filename?: string, completed?: () => void) {
-  if (!filename) {
-    filename = 'no-name.txt';
-  } else {
-    filename = /\.(?:txt|text|json|config|html)$/i.test(filename) ? filename : filename + '.txt';
+export function downloadTextFile(content: string, filename: string, saveAs?: boolean, completed?: () => void) {
+  if (!filename.endsWith('.html')) {
+    filename += '.html';
   }
 
-  const exportBlob = new Blob([content]);
+  const exportBlob = new Blob([content], { type: 'text/html' });
   const downloadUrl = window.URL.createObjectURL(exportBlob);
 
-  const isChromium = import.meta.env.IS_CHROMIUM;
-  if (isChromium) {
-    let saveLink: HTMLAnchorElement | null = document.createElement('a');
-    saveLink.href = downloadUrl;
-    saveLink.download = filename;
-
-    const ev = new MouseEvent('click', {
-      bubbles: true,
-      cancelable: false,
-      screenX: 0,
-      screenY: 0,
-      clientX: 0,
-      clientY: 0,
-      ctrlKey: false,
-      altKey: false,
-      shiftKey: false,
-      metaKey: false,
-      button: 0,
-      relatedTarget: null,
-    });
-    saveLink.dispatchEvent(ev);
-    saveLink = null;
-
-    if (typeof completed === 'function') {
-      completed();
-    }
-  } else {
-    chrome.downloads.download(
-      {
-        url: downloadUrl,
-        filename,
-      },
-      () => {
-        if (typeof completed === 'function') {
-          completed();
-        }
+  chrome.downloads.download(
+    {
+      url: downloadUrl,
+      filename,
+      saveAs,
+    },
+    () => {
+      if (typeof completed === 'function') {
+        completed();
       }
-    );
-  }
+    }
+  );
 }
 
 /**

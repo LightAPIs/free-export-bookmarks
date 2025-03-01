@@ -26,10 +26,6 @@
   "action": {
     "default_title": "__MSG_extensionName__\n__MSG_extensionTip__"
   },
-  "permissions": [
-    "bookmarks",
-    "storage",
-    "favicon"
-  ],
+  "permissions": ["bookmarks", "storage", "favicon", "downloads"],
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0upo8Ezr2Eqq/E82nd93iHGwt/Dqh6Pr51EncxgJiWXeESiKltG/SChAQL9l2+ymp9eDAJgIXYsq23vGk6jPWa1+hKNdDX212OH02FSAJhNvlUFJu/2zVdXchi3XnPRq7IsEZnR1gO9BPDa58Vl18KBKT+MPN+KDRNTUXVDqx4MyB0zaDXOsqFrhYYAGUxc2LkhgSedyT6UYh3efdEe/Ebtaia1GO/bgVHj5pcUotHSiZvfLEnXPoyoXTbzaoe7hTAjAuZ+ixng6oVdNRRBfOgQb2IiqDnxkLzJKHQL190UUgLY0mzAdWmu0GanyyAST/8DYuVZWPQzJ8vDSiMTnJwIDAQAB"
 }

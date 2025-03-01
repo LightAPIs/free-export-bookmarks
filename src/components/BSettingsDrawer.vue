@@ -60,6 +60,12 @@
         </div>
         <p>{{ isChromium ? i18n('indexDrawerExportNoParentFoldersTip') : i18n('indexDrawerExportNoParentFoldersTipFirefox') }}</p>
         <el-divider></el-divider>
+
+        <div>
+          <el-switch v-model="saveAs" :active-text="i18n('indexDrawerExportSaveAsText')"></el-switch>
+        </div>
+        <p>{{ i18n('indexDrawerExportSaveAsTip') }}</p>
+        <el-divider></el-divider>
       </el-collapse-item>
 
       <el-collapse-item name="about">
@@ -115,7 +121,7 @@ const support = [
 ];
 
 const settingsStore = useSettingsStore();
-const { showIcon, autoExpandAll, includeIcon, includeDate, noOtherBookmarks, noParentFolders } = storeToRefs(settingsStore);
+const { showIcon, autoExpandAll, includeIcon, includeDate, noOtherBookmarks, noParentFolders, saveAs } = storeToRefs(settingsStore);
 
 const open = defineModel<boolean>('open', {
   default: false,

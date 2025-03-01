@@ -13,4 +13,5 @@ interface Settings {
   includeDate: boolean;
   noOtherBookmarks: boolean;
   noParentFolders: boolean;
+  saveAs: boolean;
 }

@@ -86,6 +86,12 @@
   "indexDrawerExportNoParentFoldersTipFirefox": {
     "message": "即在导出结果中所有书签都直接位于\"书签菜单\"和\"其他书签\"等根目录下。"
   },
+  "indexDrawerExportSaveAsText": {
+    "message": "显示文件另存为窗口"
+  },
+  "indexDrawerExportSaveAsTip": {
+    "message": "以支持自定义导出文件的保存位置。"
+  },
   "indexDrawerAboutTitle": {
     "message": "更多信息"
   },

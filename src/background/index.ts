@@ -25,7 +25,8 @@ if (import.meta.env.BROWSER === 'firefox') {
         chrome.bookmarks.getSubTree(bookmarkId, async results => {
           downloadTextFile(
             await htmlFileGenerator(results, settings),
-            `bookmarks_${time.getFullYear().toString()}_${(time.getMonth() + 1).toString()}_${time.getDate().toString()}.html`
+            `bookmarks_${time.getFullYear().toString()}_${(time.getMonth() + 1).toString()}_${time.getDate().toString()}.html`,
+            settings.saveAs
           );
         });
       });

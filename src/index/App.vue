@@ -140,6 +140,7 @@ function exportHtml() {
         downloadTextFile(
           await htmlFileGenerator(exportArr, settingsStore.$state, progressHandler, progressCompleted),
           `bookmarks_${time.getFullYear()}_${time.getMonth() + 1}_${time.getDate()}.html`,
+          settingsStore.saveAs,
           () => {
             exportLoading.value = false;
             progress.show = false;

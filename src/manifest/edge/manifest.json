@@ -26,9 +26,5 @@
   "action": {
     "default_title": "__MSG_extensionName__\n__MSG_extensionTip__"
   },
-  "permissions": [
-    "bookmarks",
-    "storage",
-    "favicon"
-  ]
+  "permissions": ["bookmarks", "storage", "favicon", "downloads"]
 }

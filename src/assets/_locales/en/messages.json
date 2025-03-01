@@ -86,6 +86,12 @@
   "indexDrawerExportNoParentFoldersTipFirefox": {
     "message": "In the export result, all bookmarks are directly located under the root directories such as \"Bookmarks Menu\" and \"Other Bookmarks\"."
   },
+  "indexDrawerExportSaveAsText": {
+    "message": "Show file save as window"
+  },
+  "indexDrawerExportSaveAsTip": {
+    "message": "To support custom save location for exported file."
+  },
   "indexDrawerAboutTitle": {
     "message": "More information"
   },

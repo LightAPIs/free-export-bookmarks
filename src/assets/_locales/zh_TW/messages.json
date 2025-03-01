@@ -86,6 +86,12 @@
   "indexDrawerExportNoParentFoldersTipFirefox": {
     "message": "即在匯出結果中所有書籤都直接位於\"書籤選單\"和\"其他書籤\"等根目錄下。"
   },
+  "indexDrawerExportSaveAsText": {
+    "message": "顯示檔案另存為視窗"
+  },
+  "indexDrawerExportSaveAsTip": {
+    "message": "以支援自定義匯出檔案的儲存位置。"
+  },
   "indexDrawerAboutTitle": {
     "message": "更多資訊"
   },
