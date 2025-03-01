@@ -1,7 +1,7 @@
 {
   "name": "free-export-bookmarks",
   "description": "A extension project",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "author": "dragonish <no.web.developer@outlook.com>",
   "license": "MIT",
   "type": "module",
