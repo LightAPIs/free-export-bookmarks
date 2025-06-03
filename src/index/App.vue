@@ -91,6 +91,7 @@ const progress = reactive({
 });
 
 const debounced = debounce((newVal: string) => {
+  searching.value = true;
   nextTick(() => {
     treeRef.value?.filter(newVal);
     searching.value = false;
@@ -100,7 +101,6 @@ const debounced = debounce((newVal: string) => {
 watch(
   () => filterText.value,
   newVal => {
-    searching.value = true;
     debounced(newVal);
   }
 );
