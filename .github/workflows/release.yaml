@@ -37,7 +37,7 @@ jobs:
         id: git_tags
         run: |
           current=$(git describe --abbrev=0 --tags)
-          echo "current=${current}" >> $GITHUB_OUTPUT
+          echo "current=${current}" >> ${GITHUB_OUTPUT}
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
