@@ -29,7 +29,7 @@ jobs:
           pnpm run build
       - name: Create changelog text
         id: changelog_text
-        uses: loopwerk/tag-changelog@v1
+        uses: dragonish/tag-changelog@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           config_file: .github/scripts/tag-changelog-config.cjs
