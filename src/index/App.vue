@@ -96,7 +96,7 @@ const debounced = debounce((newVal: string) => {
     treeRef.value?.filter(newVal);
     searching.value = false;
   });
-}, 1000);
+}, 500);
 
 watch(
   () => filterText.value,
