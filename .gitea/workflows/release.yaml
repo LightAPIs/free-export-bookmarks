@@ -63,11 +63,8 @@ jobs:
 
             See: [${{ steps.git_tags.outputs.prev }}...${{ steps.git_tags.outputs.current }}](/compare/${{ steps.git_tags.outputs.prev }}...${{ steps.git_tags.outputs.current }})
       - name: Send notification
-        if: ${{ !cancelled() }}
-        run: |
-          if [ -n "${{ vars.CHAT_URL }}" ]; then
-            echo "Sending notification"
-            curl --location --request POST "${{ vars.CHAT_URL }}" --data-raw 'payload={"text": "${{ gitea.repository }}\n\n#${{ job.status }}"}'
-          else
-            echo "vars.CHAT_URL is empty"
-          fi
+        if: ${{ !cancelled() && vars.CHAT_URL != '' }}
+        uses: dragonish/send-to-synology-chat@v1
+        with:
+          webhook-url: ${{ vars.CHAT_URL }}
+          message: "${{ gitea.repository }}\n\n${{ steps.git_tags.outputs.current }}\n\n#${{ job.status }}"
