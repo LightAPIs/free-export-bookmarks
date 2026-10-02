@@ -19,7 +19,7 @@ if (import.meta.env.BROWSER === 'firefox') {
   browser.menus.onClicked.addListener(info => {
     const { bookmarkId } = info;
     if (bookmarkId) {
-      chrome.storage.local.get('settings', res => {
+      chrome.storage.local.get<{ settings: Settings }>('settings', res => {
         const settings = res.settings || {};
         const time = new Date();
         chrome.bookmarks.getSubTree(bookmarkId, async results => {
