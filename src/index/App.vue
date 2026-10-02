@@ -102,7 +102,7 @@ watch(
   () => filterText.value,
   newVal => {
     debounced(newVal);
-  }
+  },
 );
 
 function progressHandler() {
@@ -148,7 +148,7 @@ function exportHtml() {
               message: i18n('indexExportSuccessTip'),
               type: 'success',
             });
-          }
+          },
         );
       }
     });

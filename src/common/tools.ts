@@ -23,7 +23,7 @@ export function downloadTextFile(content: string, filename: string, saveAs?: boo
       if (typeof completed === 'function') {
         completed();
       }
-    }
+    },
   );
 }
 
@@ -34,10 +34,9 @@ export function downloadTextFile(content: string, filename: string, saveAs?: boo
  * @returns
  */
 function htmlEncode(html: string) {
-  let temp: HTMLDivElement | null = document.createElement('div');
+  const temp: HTMLDivElement | null = document.createElement('div');
   temp.textContent = html;
   const output = temp.innerHTML;
-  temp = null;
   return output;
 }
 
@@ -109,7 +108,7 @@ async function traverse(
   settings: Partial<Settings>,
   tabSpace = '',
   isNoOther = false,
-  progressHandle: null | (() => void) = null
+  progressHandle: null | (() => void) = null,
 ) {
   let html = '';
   const space = tabSpace + '    ';
@@ -161,7 +160,7 @@ export async function htmlFileGenerator(
   arr: chrome.bookmarks.BookmarkTreeNode[],
   settings: Partial<Settings>,
   progressHandle: null | (() => void) = null,
-  progressCompleted: null | (() => void) = null
+  progressCompleted: null | (() => void) = null,
 ) {
   const header = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <!-- This is an automatically generated file.

@@ -52,13 +52,17 @@
             :active-text="isChromium ? i18n('indexDrawerExportNoOtherBookmarksText') : i18n('indexDrawerExportNoOtherBookmarksTextFirefox')"
           ></el-switch>
         </div>
-        <p>{{ isChromium ? i18n('indexDrawerExportNoOtherBookmarksTip') : i18n('indexDrawerExportNoOtherBookmarksTipFirefox') }}</p>
+        <p>
+          {{ isChromium ? i18n('indexDrawerExportNoOtherBookmarksTip') : i18n('indexDrawerExportNoOtherBookmarksTipFirefox') }}
+        </p>
         <el-divider></el-divider>
 
         <div>
           <el-switch v-model="noParentFolders" :active-text="i18n('indexDrawerExportNoParentFoldersText')"></el-switch>
         </div>
-        <p>{{ isChromium ? i18n('indexDrawerExportNoParentFoldersTip') : i18n('indexDrawerExportNoParentFoldersTipFirefox') }}</p>
+        <p>
+          {{ isChromium ? i18n('indexDrawerExportNoParentFoldersTip') : i18n('indexDrawerExportNoParentFoldersTipFirefox') }}
+        </p>
         <el-divider></el-divider>
 
         <div>

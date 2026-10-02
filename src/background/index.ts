@@ -26,7 +26,7 @@ if (import.meta.env.BROWSER === 'firefox') {
           downloadTextFile(
             await htmlFileGenerator(results, settings),
             `bookmarks_${time.getFullYear().toString()}_${(time.getMonth() + 1).toString()}_${time.getDate().toString()}.html`,
-            settings.saveAs
+            settings.saveAs,
           );
         });
       });

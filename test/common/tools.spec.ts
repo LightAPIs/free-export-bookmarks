@@ -4,7 +4,10 @@ import path from 'node:path';
 import { expect } from 'chai';
 import { htmlFileGenerator } from '@/common/tools';
 
-type firefoxBookmarkTreeNode = chrome.bookmarks.BookmarkTreeNode & { type: 'bookmark' | 'folder' | 'separator'; children?: firefoxBookmarkTreeNode[] };
+type firefoxBookmarkTreeNode = chrome.bookmarks.BookmarkTreeNode & {
+  type: 'bookmark' | 'folder' | 'separator';
+  children?: firefoxBookmarkTreeNode[];
+};
 
 function readFile(htmlName: string) {
   const __dirname = import.meta.dirname;
@@ -20,6 +23,7 @@ describe('tools/htmlFileGenerator', function () {
       title: 'Bookmarks bar',
       dateAdded: 1543251918305,
       dateGroupModified: 1715253428187,
+      syncing: false,
       children: [
         {
           id: '10001',
@@ -28,6 +32,7 @@ describe('tools/htmlFileGenerator', function () {
           dateAdded: 1662359122122,
           title: 'Google',
           url: 'https://www.google.com/',
+          syncing: false,
         },
       ],
     },
@@ -63,6 +68,7 @@ describe('tools/htmlFileGenerator', function () {
       title: 'Bookmarks bar',
       dateAdded: 1543251918305,
       dateGroupModified: 1715253428187,
+      syncing: false,
       children: [
         {
           id: '10001',
@@ -71,6 +77,7 @@ describe('tools/htmlFileGenerator', function () {
           dateAdded: 1662359122122,
           title: 'Google',
           url: 'https://www.google.com/',
+          syncing: false,
         },
         {
           id: '10002',
@@ -79,6 +86,7 @@ describe('tools/htmlFileGenerator', function () {
           title: 'Folder',
           dateAdded: 1662359121159,
           dateGroupModified: 1662359122124,
+          syncing: false,
           children: [
             {
               id: '10003',
@@ -87,6 +95,7 @@ describe('tools/htmlFileGenerator', function () {
               dateAdded: 1718018419639,
               title: 'GitHub',
               url: 'https://github.com/',
+              syncing: false,
             },
           ],
         },
@@ -124,6 +133,7 @@ describe('tools/htmlFileGenerator', function () {
       title: 'Bookmarks bar',
       dateAdded: 1543251918305,
       dateGroupModified: 1715253428187,
+      syncing: false,
       children: [
         {
           id: '10001',
@@ -132,6 +142,7 @@ describe('tools/htmlFileGenerator', function () {
           dateAdded: 1662359122122,
           title: 'Google',
           url: 'https://www.google.com/',
+          syncing: false,
         },
         {
           id: '10002',
@@ -140,6 +151,7 @@ describe('tools/htmlFileGenerator', function () {
           title: 'Folder',
           dateAdded: 1662359121159,
           dateGroupModified: 1662359122124,
+          syncing: false,
           children: [
             {
               id: '10003',
@@ -148,6 +160,7 @@ describe('tools/htmlFileGenerator', function () {
               dateAdded: 1718018419639,
               title: 'GitHub',
               url: 'https://github.com/',
+              syncing: false,
             },
           ],
         },
@@ -160,6 +173,7 @@ describe('tools/htmlFileGenerator', function () {
       dateGroupModified: 1682310070383,
       parentId: '0',
       title: 'Other bookmarks',
+      syncing: false,
       children: [
         {
           id: '11001',
@@ -168,6 +182,7 @@ describe('tools/htmlFileGenerator', function () {
           dateAdded: 1718019712232,
           title: 'Home / X',
           url: 'https://x.com/home',
+          syncing: false,
         },
       ],
     },
@@ -196,6 +211,7 @@ describe('tools/htmlFileGenerator', function () {
       index: 0,
       parentId: 'root________',
       type: 'folder',
+      syncing: false,
       children: [
         {
           id: 'cojpCOyb0lMS',
@@ -205,6 +221,7 @@ describe('tools/htmlFileGenerator', function () {
           title: 'About',
           url: 'https://www.mozilla.org/about/',
           type: 'bookmark',
+          syncing: false,
         },
       ],
     },
@@ -216,6 +233,7 @@ describe('tools/htmlFileGenerator', function () {
       index: 1,
       parentId: 'root________',
       type: 'folder',
+      syncing: false,
       children: [
         {
           id: 'oztVbdoL7i-c',
@@ -225,6 +243,7 @@ describe('tools/htmlFileGenerator', function () {
           title: 'Google',
           url: 'https://www.google.com/',
           type: 'bookmark',
+          syncing: false,
         },
         {
           id: 'ikoBYA5wHzXP',
@@ -234,6 +253,7 @@ describe('tools/htmlFileGenerator', function () {
           title: '',
           url: 'data:',
           type: 'separator',
+          syncing: false,
         },
         {
           id: 'djobiKNRfCZh',
@@ -243,6 +263,7 @@ describe('tools/htmlFileGenerator', function () {
           title: 'GitHub',
           url: 'https://github.com/',
           type: 'bookmark',
+          syncing: false,
         },
       ],
     },
