@@ -38,7 +38,7 @@ Prettier rules in effect: single quotes, avoided arrow parens, semicolons, `prin
 - `pnpm run watch:c` / `watch:f` / `watch:e` — development watch builds (output in `dist/`)
 - `pnpm run test` — type check + unit tests
 - `pnpm run lint` — lint fix + format
-- `pnpm run release` — bump version via `standard-version`
+- `pnpm run release` — bump version via `commit-and-tag-version`
 
 Builds are parameterized by the `BROWSER_ENV` environment variable (`chrome` | `firefox` | `edge`).
 
