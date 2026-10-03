@@ -178,3 +178,23 @@ export async function htmlFileGenerator(
   }
   return header + body;
 }
+
+/**
+ * Merge the checked keys after a filter-aware check operation.
+ *
+ * While the tree is filtered, checking a folder only selects the bookmarks that are currently
+ * shown; the nodes hidden by the filter keep whatever state they had before.
+ * @param newCheckedKeys keys el-tree just reported as checked
+ * @param oldCheckedKeys keys that were checked before this operation
+ * @param visibleLeafKeys ids of the leaf nodes currently shown by the filter
+ * @param hiddenLeafKeys ids of the leaf nodes currently hidden by the filter
+ * @returns the checked keys to apply back to the tree (leaf nodes only)
+ */
+export function mergeFilteredCheckedKeys(
+  newCheckedKeys: Array<string | number>,
+  oldCheckedKeys: Array<string | number>,
+  visibleLeafKeys: Set<string | number>,
+  hiddenLeafKeys: Set<string | number>,
+): Array<string | number> {
+  return [...newCheckedKeys.filter(key => visibleLeafKeys.has(key)), ...oldCheckedKeys.filter(key => hiddenLeafKeys.has(key))];
+}

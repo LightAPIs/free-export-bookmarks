@@ -30,6 +30,7 @@
         :default-expanded-keys="expandedKeys"
         :filter-node-method="filterNode"
         show-checkbox
+        @check="handleCheck"
       >
         <template #default="{ node, data }">
           <template v-if="settingsStore.showIcon">
@@ -58,7 +59,7 @@ import { useDark, useToggle } from '@vueuse/core';
 import { useSettingsStore } from '@/stores/settings';
 import { ElMessage, ElLoading, type ElTree } from 'element-plus';
 import { Folder, Loading, Search, Setting, Moon, Sunny } from '@element-plus/icons-vue';
-import { downloadTextFile, htmlFileGenerator, faviconURL } from '@/common/tools';
+import { downloadTextFile, htmlFileGenerator, faviconURL, mergeFilteredCheckedKeys } from '@/common/tools';
 import { debounce } from 'lodash-es';
 import BSettingsDrawer from '@/components/BSettingsDrawer.vue';
 
@@ -118,6 +119,38 @@ function progressCompleted() {
 
 function filterNode(value: string, data: TreeNodeData) {
   return data.title.includes(value) || data.url?.includes(value);
+}
+
+/**
+ * Classify the leaf nodes of the bookmark tree by their visibility after filtering.
+ * @param arr bookmark tree
+ * @param visible ids of the leaf nodes currently shown
+ * @param hidden ids of the leaf nodes filtered out
+ */
+function collectLeafKeys(arr: chrome.bookmarks.BookmarkTreeNode[], visible: Set<TreeKey>, hidden: Set<TreeKey>) {
+  arr.forEach(item => {
+    const node = treeRef.value?.getNode(item.id);
+    if (node?.isLeaf) (node.visible ? visible : hidden).add(item.id);
+    if (item.children) collectLeafKeys(item.children, visible, hidden);
+  });
+}
+
+function handleCheck(_data: TreeNodeData, { checkedKeys: newCheckedKeys }: { checkedKeys: TreeKey[] }) {
+  // Keep the checked keys in sync with the default behaviour when no filter is active.
+  if (!filterText.value) {
+    checkedKeys.value = newCheckedKeys;
+    return;
+  }
+
+  // While filtering, el-tree still selects every descendant of a checked folder, including the
+  // nodes hidden by the filter. Keep only the shown bookmarks and leave the hidden ones as they
+  // were, so that no invisible selection sneaks into the export.
+  const visibleLeafKeys = new Set<TreeKey>();
+  const hiddenLeafKeys = new Set<TreeKey>();
+  collectLeafKeys(dataSource.value, visibleLeafKeys, hiddenLeafKeys);
+
+  checkedKeys.value = mergeFilteredCheckedKeys(newCheckedKeys, checkedKeys.value, visibleLeafKeys, hiddenLeafKeys);
+  treeRef.value?.setCheckedKeys(checkedKeys.value);
 }
 
 function exportHtml() {

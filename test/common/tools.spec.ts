@@ -2,7 +2,7 @@ import 'mocha';
 import fs from 'node:fs';
 import path from 'node:path';
 import { expect } from 'chai';
-import { htmlFileGenerator } from '@/common/tools';
+import { htmlFileGenerator, mergeFilteredCheckedKeys } from '@/common/tools';
 
 type firefoxBookmarkTreeNode = chrome.bookmarks.BookmarkTreeNode & {
   type: 'bookmark' | 'folder' | 'separator';
@@ -273,5 +273,27 @@ describe('tools/htmlFileGenerator', function () {
     const res = await htmlFileGenerator(firefoxNode, { includeDate: true });
     const expected = readFile('firefoxSeparator');
     expect(res).to.be.eq(expected);
+  });
+});
+
+describe('tools/mergeFilteredCheckedKeys', function () {
+  it('keeps only the visible keys of the new selection', function () {
+    const res = mergeFilteredCheckedKeys(['1', '2', '3'], [], new Set(['1', '3']), new Set(['2']));
+    expect(res).to.have.members(['1', '3']);
+  });
+
+  it('preserves the hidden keys that were checked before', function () {
+    const res = mergeFilteredCheckedKeys(['1'], ['2', '3'], new Set(['1']), new Set(['2', '3']));
+    expect(res).to.have.members(['1', '2', '3']);
+  });
+
+  it('drops the hidden keys that were not checked before', function () {
+    const res = mergeFilteredCheckedKeys(['1', '2', '3'], [], new Set(['1']), new Set(['2', '3']));
+    expect(res).to.have.members(['1']);
+  });
+
+  it('selects nothing when no visible leaf is checked', function () {
+    const res = mergeFilteredCheckedKeys(['2'], [], new Set([]), new Set(['2']));
+    expect(res).to.have.members([]);
   });
 });
