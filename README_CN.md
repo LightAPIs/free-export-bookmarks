@@ -26,7 +26,7 @@
 
 ### 环境需求
 
-- 安装 [Node.js](https://nodejs.org/) 20+
+- 安装 [Node.js](https://nodejs.org/) 22+
 
 ### 初始化指令
 

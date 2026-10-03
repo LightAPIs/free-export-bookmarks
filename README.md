@@ -26,7 +26,7 @@ Go to the [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/det
 
 ### Environment
 
-- Install [Node.js](https://nodejs.org/) 20+
+- Install [Node.js](https://nodejs.org/) 22+
 
 ### Initialization
 
