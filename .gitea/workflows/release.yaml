@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   build:
@@ -14,19 +14,19 @@ jobs:
       HTTPS_PROXY: ${{ vars.PROXY }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           fetch-tags: true
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
-          version: 10
+          version: 12
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
-          cache: 'pnpm'
+          node-version: 24
+          cache: "pnpm"
       - name: Build package
         run: |
           pnpm install
@@ -47,7 +47,7 @@ jobs:
       - name: Create release
         uses: akkuman/gitea-release-action@v1
         env:
-          NODE_OPTIONS: '--experimental-fetch' # if nodejs < 18
+          NODE_OPTIONS: "--experimental-fetch" # if nodejs < 18
         with:
           server_url: ${{ vars.SERVER }}
           files: |-
